@@ -23,8 +23,6 @@
     NSArray *einsatz;
 }
 
-@synthesize tableView;
-
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -77,13 +75,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *simpleTableIndentifier = @"EinsatzCell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIndentifier];
+
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"einsatzCell"];
     
     if (cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIndentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"einsatzCell"];
     }
     
     NSDictionary *dict = [dataArray objectAtIndex:indexPath.section];
