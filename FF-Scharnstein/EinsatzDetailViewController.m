@@ -32,6 +32,9 @@
 	// Do any additional setup after loading the view.
     
     einsatzAuswahl.text = einsatzAuswahlName;
+    
+    self.navigationItem.title = @"das test";
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,5 +42,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end
