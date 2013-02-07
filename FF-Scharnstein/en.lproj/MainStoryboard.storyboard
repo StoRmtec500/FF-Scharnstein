@@ -174,7 +174,7 @@
         <scene sceneID="Oj0-LO-J1P">
             <objects>
                 <viewController title="test" id="3Ul-VB-SfC" customClass="EinsatzDetailViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="koi-Nc-EgI">
+                    <view key="view" contentMode="scaleToFill" id="koi-Nc-EgI" customClass="Test">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
