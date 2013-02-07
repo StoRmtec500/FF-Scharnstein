@@ -7,12 +7,18 @@
 //
 
 #import "EinsatzTableViewController.h"
+#import "XMLStringFile.h"
+#import "EinsatzTableCell.h"
+#import "EinsatzDetailViewController.h"
 
 @interface EinsatzTableViewController ()
 
 @end
 
 @implementation EinsatzTableViewController
+
+@synthesize tableView1;
+@synthesize einsatzSubTyp;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -121,81 +127,41 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	static NSString *MyIdentifier = @"MyIdentifier";
+	static NSString *MyIdentifier = @"einsatzDetail";
 	
 	// Try to retrieve from the table view a now-unused cell with the given identifier
 	//UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
 	
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+	 EinsatzTableCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
 	
 	
 	// If no cell is available, create a new one using the given identifier
-	if (cell == nil) {
-		//cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:MyIdentifier] autorelease];
-		
+	if (cell == nil) {		
 		//add some extra text on table cell .........
-		cell = [[[UITableViewCell alloc] initWithStyle: UITableViewCellStyleSubtitle   reuseIdentifier:MyIdentifier] autorelease];
-		
+		cell = [[[EinsatzTableCell alloc] initWithStyle: UITableViewCellStyleSubtitle   reuseIdentifier:MyIdentifier] autorelease];
 	}
+    
 	// Set up the cell
-	[cell.textLabel setFont:[UIFont fontWithName:@"Verdana" size:12]];
-	[cell.detailTextLabel setFont:[UIFont fontWithName:@"Verdana" size:12]];
-	cell.textLabel.text=[[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzNummer];
-	cell.detailTextLabel.text=[[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzTyp];
+	//[cell.textLabel setFont:[UIFont fontWithName:@"Verdana" size:12]];
+	//[cell.detailTextLabel setFont:[UIFont fontWithName:@"Verdana" size:12]];
+    
+	//cell.textLabel.text=[[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzNummer];
+	//cell.detailTextLabel.text=[[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzTyp];
+    cell.einsatzSubTyp.text=[[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzTyp];
 	
 	return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    if([segue.identifier isEqualToString:@"showEinsatzDetails"])
+    {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        EinsatzDetailViewController *destViewController = segue.destinationViewController;
+        //destViewController.strEinsartzNummer = [rssOutputData objectAtIndex:indexPath.row];
+        destViewController.strEinsartzNummer = [[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzTyp];
+    }
 }
 
 @end

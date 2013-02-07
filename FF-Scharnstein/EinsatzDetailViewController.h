@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface EinsatzDetailViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UILabel *einsatzAuswahl;
-@property (nonatomic, strong) NSString *einsatzAuswahlName;
+
+
+@property (strong, nonatomic) IBOutlet UILabel *lblEinsatzNummer;
+@property (nonatomic, strong) NSString *strEinsartzNummer;
 @end

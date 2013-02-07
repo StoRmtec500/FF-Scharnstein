@@ -18,4 +18,8 @@
     XMLStringFile *xmlStringFileObject;
 }
 
+@property (retain, nonatomic) IBOutlet UILabel *einsatzSubTyp;
+
+@property (nonatomic, strong) IBOutlet UITableView *tableView1;
+
 @end

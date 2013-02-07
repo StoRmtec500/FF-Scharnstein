@@ -14,8 +14,7 @@
 
 @implementation EinsatzDetailViewController
 
-@synthesize einsatzAuswahl;
-@synthesize einsatzAuswahlName;
+@synthesize lblEinsatzNummer, strEinsartzNummer;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,9 +30,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    einsatzAuswahl.text = einsatzAuswahlName;
+    lblEinsatzNummer.text = strEinsartzNummer;
     
-    self.navigationItem.title = @"das test";
+    self.navigationItem.title = @"Einsatz Details";
     
 }
 
