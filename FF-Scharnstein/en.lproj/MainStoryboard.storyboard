@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ktr-6D-CBq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C2034" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ktr-6D-CBq">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -14,7 +14,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="einsatzCell" textLabel="U6D-TA-NAH" style="IBUITableViewCellStyleDefault" id="Q83-pR-qLW">
-                                <rect key="frame" x="0.0" y="46" width="320" height="45"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="280" height="43"/>
@@ -57,6 +57,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="ic6-y6-Gtk" kind="relationship" relationship="viewControllers" id="Wjg-Lw-JLS"/>
+                        <segue destination="3Ul-VB-SfC" kind="relationship" relationship="viewControllers" id="r55-kF-C2a"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YUr-3f-Cql" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -92,7 +93,7 @@
                                                 <constraint firstAttribute="width" constant="62" id="j0M-Vt-zlB"/>
                                                 <constraint firstAttribute="height" constant="21" id="tlq-XQ-4Qf"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
@@ -100,7 +101,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="187" id="RlJ-ps-LoD"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
@@ -108,7 +109,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="4gK-Mx-Lxs"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
@@ -116,7 +117,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="194" id="Bg1-Zf-Ojg"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
@@ -132,7 +133,6 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="397-pc-BdS" firstAttribute="baseline" secondItem="UBl-eJ-ZLV" secondAttribute="baseline" type="default" id="11p-6Q-4nQ"/>
                                     <constraint firstAttribute="trailing" secondItem="v6i-h9-M7P" secondAttribute="trailing" constant="20" type="default" id="6AD-9f-syn"/>
                                     <constraint firstItem="397-pc-BdS" firstAttribute="leading" secondItem="qya-5a-Dnt" secondAttribute="leading" type="default" id="BoK-Av-8fE"/>
                                     <constraint firstItem="qya-5a-Dnt" firstAttribute="leading" secondItem="Xvz-lS-5do" secondAttribute="leading" constant="75" id="DlJ-Od-L75"/>
@@ -144,9 +144,10 @@
                                     <constraint firstItem="bpO-X5-mJt" firstAttribute="top" secondItem="Xvz-lS-5do" secondAttribute="top" constant="29" id="X1v-mv-H7x"/>
                                     <constraint firstItem="UBl-eJ-ZLV" firstAttribute="leading" secondItem="bpO-X5-mJt" secondAttribute="leading" type="default" id="a8w-xK-zSU"/>
                                     <constraint firstAttribute="bottom" secondItem="UBl-eJ-ZLV" secondAttribute="bottom" constant="9" id="beH-zh-KxV"/>
+                                    <constraint firstItem="qya-5a-Dnt" firstAttribute="bottom" secondItem="bpO-X5-mJt" secondAttribute="bottom" type="default" id="cIz-yU-S3n"/>
                                     <constraint firstItem="397-pc-BdS" firstAttribute="top" secondItem="UBl-eJ-ZLV" secondAttribute="top" type="default" id="mCJ-X7-U4U"/>
                                     <constraint firstItem="v6i-h9-M7P" firstAttribute="top" secondItem="Xvz-lS-5do" secondAttribute="top" constant="7" id="oij-Vv-TIx"/>
-                                    <constraint firstItem="qya-5a-Dnt" firstAttribute="baseline" secondItem="bpO-X5-mJt" secondAttribute="baseline" type="default" id="smf-7P-DGD"/>
+                                    <constraint firstItem="397-pc-BdS" firstAttribute="bottom" secondItem="UBl-eJ-ZLV" secondAttribute="bottom" type="default" id="sNx-Av-MAw"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="einsatzSubTyp" destination="v6i-h9-M7P" id="sxV-g5-QbU"/>
@@ -185,11 +186,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Bov-fH-AkY" firstAttribute="leading" secondItem="koi-Nc-EgI" secondAttribute="leading" constant="33" id="ApP-Tu-rbH"/>
-                            <constraint firstItem="Bov-fH-AkY" firstAttribute="top" secondItem="koi-Nc-EgI" secondAttribute="top" constant="67" id="Kdn-me-h97"/>
+                            <constraint firstItem="Bov-fH-AkY" firstAttribute="top" secondItem="koi-Nc-EgI" secondAttribute="top" constant="45" id="XNi-69-Et9"/>
+                            <constraint firstItem="Bov-fH-AkY" firstAttribute="leading" secondItem="koi-Nc-EgI" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="cyR-b6-9EU"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Details" id="hxe-Z8-9Ck"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Details" id="hxe-Z8-9Ck"/>
                     <navigationItem key="navigationItem" title="Details" id="Zji-81-1rw"/>
                     <connections>
                         <outlet property="lblEinsatzNummer" destination="Bov-fH-AkY" id="KpA-oW-dsk"/>
@@ -218,36 +219,12 @@
             <point key="canvasLocation" x="576" y="199"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="EinsatzDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EinsatzDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="lblEinsatzNummer" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="EinsatzTableCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EinsatzTableCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="einsatzSubTyp" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="EinsatzTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EinsatzTableViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="einsatzSubTyp" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tableView1" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="UebersichtTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UebersichtTableViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="TMR-Z3-6h7"/>
+    </inferredMetricsTieBreakers>
 </document>

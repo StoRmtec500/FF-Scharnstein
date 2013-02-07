@@ -161,6 +161,7 @@
         EinsatzDetailViewController *destViewController = segue.destinationViewController;
         //destViewController.strEinsartzNummer = [rssOutputData objectAtIndex:indexPath.row];
         destViewController.strEinsartzNummer = [[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzTyp];
+        [self.tabBarController setSelectedIndex:1];
     }
 }
 
