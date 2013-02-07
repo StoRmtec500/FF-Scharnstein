@@ -82,7 +82,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    self.isAscending = YES;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -103,6 +103,12 @@
     
     //releasing the object of NSData as a part of memory management
     [xmlData release];
+    
+#pragma mark - Refresh für die Tabelle
+    //****** Refresh eingebaut bei den Einsätzen *****//
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc]init];
+    [refreshControl addTarget:self action:@selector(viewDidLoad) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refreshControl;
 }
 
 - (void)didReceiveMemoryWarning

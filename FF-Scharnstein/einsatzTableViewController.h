@@ -21,5 +21,6 @@
 @property (retain, nonatomic) IBOutlet UILabel *einsatzSubTyp;
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView1;
+@property (nonatomic) BOOL isAscending;
 
 @end
