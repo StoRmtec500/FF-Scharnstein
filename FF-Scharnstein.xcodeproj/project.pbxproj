@@ -23,7 +23,6 @@
 		37719FD116C27CA800808674 /* UebersichtTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37719FD016C27CA800808674 /* UebersichtTableViewController.m */; };
 		37719FD516C27FCE00808674 /* EinsatzDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37719FD416C27FCE00808674 /* EinsatzDetailViewController.m */; };
 		B846376516C303C500EBA269 /* EinsatzTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B846376416C303C500EBA269 /* EinsatzTableViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B8DD955116C3CC4F0078A6FC /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = B8DD955016C3CC4F0078A6FC /* Test.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,8 +52,6 @@
 		37719FD416C27FCE00808674 /* EinsatzDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EinsatzDetailViewController.m; sourceTree = "<group>"; };
 		B846376316C303C500EBA269 /* EinsatzTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EinsatzTableViewController.h; sourceTree = "<group>"; };
 		B846376416C303C500EBA269 /* EinsatzTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EinsatzTableViewController.m; sourceTree = "<group>"; };
-		B8DD954F16C3CC4F0078A6FC /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
-		B8DD955016C3CC4F0078A6FC /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,8 +113,6 @@
 				3737F10C16C3ABC6000975C8 /* EinsatzTableCell.m */,
 				3737F0FB16C39112000975C8 /* XMLStringFile.h */,
 				3737F0FC16C39112000975C8 /* XMLStringFile.m */,
-				B8DD954F16C3CC4F0078A6FC /* Test.h */,
-				B8DD955016C3CC4F0078A6FC /* Test.m */,
 				37719F7416C2464200808674 /* Supporting Files */,
 			);
 			path = "FF-Scharnstein";
@@ -211,7 +206,6 @@
 				B846376516C303C500EBA269 /* EinsatzTableViewController.m in Sources */,
 				3737F0FD16C39112000975C8 /* XMLStringFile.m in Sources */,
 				3737F10D16C3ABC6000975C8 /* EinsatzTableCell.m in Sources */,
-				B8DD955116C3CC4F0078A6FC /* Test.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
