@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3737F0FD16C39112000975C8 /* XMLStringFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 3737F0FC16C39112000975C8 /* XMLStringFile.m */; };
 		37719F6E16C2464200808674 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37719F6D16C2464200808674 /* UIKit.framework */; };
 		37719F7016C2464200808674 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37719F6F16C2464200808674 /* Foundation.framework */; };
 		37719F7216C2464200808674 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37719F7116C2464200808674 /* CoreGraphics.framework */; };
@@ -20,10 +21,12 @@
 		37719F9516C27ABA00808674 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37719F9416C27ABA00808674 /* DetailViewController.m */; };
 		37719FD116C27CA800808674 /* UebersichtTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37719FD016C27CA800808674 /* UebersichtTableViewController.m */; };
 		37719FD516C27FCE00808674 /* EinsatzDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37719FD416C27FCE00808674 /* EinsatzDetailViewController.m */; };
-		B846376516C303C500EBA269 /* EinsatzTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B846376416C303C500EBA269 /* EinsatzTableViewController.m */; };
+		B846376516C303C500EBA269 /* EinsatzTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B846376416C303C500EBA269 /* EinsatzTableViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3737F0FB16C39112000975C8 /* XMLStringFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLStringFile.h; sourceTree = "<group>"; };
+		3737F0FC16C39112000975C8 /* XMLStringFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLStringFile.m; sourceTree = "<group>"; };
 		37719F6916C2464200808674 /* FF-Scharnstein.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FF-Scharnstein.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37719F6D16C2464200808674 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		37719F6F16C2464200808674 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -103,6 +106,8 @@
 				37719FD416C27FCE00808674 /* EinsatzDetailViewController.m */,
 				B846376316C303C500EBA269 /* EinsatzTableViewController.h */,
 				B846376416C303C500EBA269 /* EinsatzTableViewController.m */,
+				3737F0FB16C39112000975C8 /* XMLStringFile.h */,
+				3737F0FC16C39112000975C8 /* XMLStringFile.m */,
 				37719F7416C2464200808674 /* Supporting Files */,
 			);
 			path = "FF-Scharnstein";
@@ -194,6 +199,7 @@
 				37719FD116C27CA800808674 /* UebersichtTableViewController.m in Sources */,
 				37719FD516C27FCE00808674 /* EinsatzDetailViewController.m in Sources */,
 				B846376516C303C500EBA269 /* EinsatzTableViewController.m in Sources */,
+				3737F0FD16C39112000975C8 /* XMLStringFile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

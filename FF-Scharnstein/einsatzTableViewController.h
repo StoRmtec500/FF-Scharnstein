@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XMLStringFile.h"
 
-@interface EinsatzTableViewController : UITableViewController
+@interface EinsatzTableViewController : UITableViewController <NSXMLParserDelegate>
+{
+    NSMutableArray *rssOutputData;
+    NSMutableString * nodeContent;
+    NSXMLParser *xmlParserObject;
+    
+    XMLStringFile *xmlStringFileObject;
+}
 
 @end
