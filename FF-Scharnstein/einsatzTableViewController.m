@@ -10,6 +10,7 @@
 #import "XMLStringFile.h"
 #import "EinsatzTableCell.h"
 #import "EinsatzDetailViewController.h"
+#import "UebersichtTableViewController.h"
 
 @interface EinsatzTableViewController ()
 
@@ -20,6 +21,7 @@
 @synthesize tableView1;
 @synthesize einsatzSubTyp;
 
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -28,6 +30,12 @@
     }
     return self;
 }
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+
 
 #pragma mark NSXMLParser delegate
 
@@ -62,9 +70,9 @@
 	if([elementName isEqualToString:@"einsatzsubtyp"]){
 		xmlStringFileObject.xmlEinsatzTyp=nodeContent;
 	}
- //   if([elementName isEqualToString:@"alarmstufe"]){
-	//	xmlStringFileObject.xmltest=nodecontent;
-//	}
+    if([elementName isEqualToString:@"alarmstufe"]){
+		xmlStringFileObject.xmlEinsatzAlarmstufe=nodeContent;
+	}
 	//finally when we reaches the end of tag i am adding data inside the NSMutableArray
 	if([elementName isEqualToString:@"einsatz"]){
         
@@ -89,26 +97,17 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    rssOutputData = [[NSMutableArray alloc]init];
+
     
-    //declare the object of allocated variable
-    NSData *xmlData=[[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:@"http://intranet.ooelfv.at/webext2/rss/webext2_laufend.xml"]];
-    
-    //allocate memory for parser as well as
-    xmlParserObject =[[NSXMLParser alloc]initWithData:xmlData];
-    [xmlParserObject setDelegate:self];
-    
-    //asking the xmlparser object to beggin with its parsing
-    [xmlParserObject parse];
-    
-    //releasing the object of NSData as a part of memory management
-    [xmlData release];
     
 #pragma mark - Refresh für die Tabelle
     //****** Refresh eingebaut bei den Einsätzen *****//
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc]init];
-    [refreshControl addTarget:self action:@selector(viewDidLoad) forControlEvents:UIControlEventValueChanged];
-    self.refreshControl = refreshControl;
+    refreshControl.tintColor = [UIColor redColor];
+    [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+    [self setRefreshControl:refreshControl];
+    
+    [self XMLURL];
 }
 
 - (void)didReceiveMemoryWarning
@@ -154,10 +153,19 @@
 	//cell.textLabel.text=[[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzNummer];
 	//cell.detailTextLabel.text=[[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzTyp];
     cell.einsatzSubTyp.text=[[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzTyp];
-	
+	cell.einsatzAlarmstufe.text=[[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzAlarmstufe];
 	return cell;
 }
 
+/*-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    NSString *sectionHeader = nil;
+    if(section == 0)
+    {
+        sectionHeader = @"Aktuelle Einsätze";
+    }
+    return sectionHeader;
+}*/
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -167,8 +175,35 @@
         EinsatzDetailViewController *destViewController = segue.destinationViewController;
         //destViewController.strEinsartzNummer = [rssOutputData objectAtIndex:indexPath.row];
         destViewController.strEinsartzNummer = [[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzTyp];
-        [self.tabBarController setSelectedIndex:1];
+        //[self.tabBarController setSelectedIndex:1];
+        //self.tabBarController.selectedIndex = 1;
     }
+}
+
+-(void)XMLURL
+{
+    rssOutputData = [[NSMutableArray alloc]init];
+    
+    //declare the object of allocated variable
+    NSData *xmlData=[[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:@"http://intranet.ooelfv.at/webext2/rss/webext2_laufend.xml"]];
+    
+    //allocate memory for parser as well as
+    xmlParserObject =[[NSXMLParser alloc]initWithData:xmlData];
+    [xmlParserObject setDelegate:self];
+    
+    //asking the xmlparser object to beggin with its parsing
+    [xmlParserObject parse];
+    
+    //releasing the object of NSData as a part of memory management
+    [xmlData release];
+}
+
+-(void)refresh:(UIRefreshControl*)refreshControl
+{
+    NSLog(@"refreshing");
+    [self XMLURL];
+    [self.tableView reloadData];
+    [refreshControl endRefreshing];
 }
 
 @end

@@ -23,4 +23,6 @@
 @property (nonatomic, strong) IBOutlet UITableView *tableView1;
 @property (nonatomic) BOOL isAscending;
 
+
+-(void) XMLURL;
 @end

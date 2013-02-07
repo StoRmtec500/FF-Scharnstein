@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C2034" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ktr-6D-CBq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ktr-6D-CBq">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -14,7 +14,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="einsatzCell" textLabel="U6D-TA-NAH" style="IBUITableViewCellStyleDefault" id="Q83-pR-qLW">
-                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="280" height="43"/>
@@ -57,7 +57,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="ic6-y6-Gtk" kind="relationship" relationship="viewControllers" id="Wjg-Lw-JLS"/>
-                        <segue destination="3Ul-VB-SfC" kind="relationship" relationship="viewControllers" id="r55-kF-C2a"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YUr-3f-Cql" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -68,23 +67,23 @@
         <scene sceneID="Fb6-P2-inu">
             <objects>
                 <tableViewController title="Einsatz" id="ic6-y6-Gtk" customClass="EinsatzTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="ZVI-fM-jKo">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="80" sectionHeaderHeight="10" sectionFooterHeight="10" id="ZVI-fM-jKo">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="einsatzDetail" rowHeight="80" id="Xvz-lS-5do" customClass="EinsatzTableCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="80"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="82"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="79"/>
+                                    <rect key="frame" x="10" y="1" width="280" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="left" text="VERKEHRSUNFALL EINGEKLEMMTE PERSON" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6i-h9-M7P">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="290" id="orC-Zd-dUe"/>
+                                                <constraint firstAttribute="height" constant="21" id="e9S-4I-etV"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="16"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="15"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
@@ -93,7 +92,7 @@
                                                 <constraint firstAttribute="width" constant="62" id="j0M-Vt-zlB"/>
                                                 <constraint firstAttribute="height" constant="21" id="tlq-XQ-4Qf"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
@@ -101,15 +100,12 @@
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="187" id="RlJ-ps-LoD"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Bezirk:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBl-eJ-ZLV">
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="4gK-Mx-Lxs"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
@@ -117,15 +113,16 @@
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="194" id="Bg1-Zf-Ojg"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1QS-cC-cTw">
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="1Dm-kL-wDB"/>
+                                                <constraint firstAttribute="width" constant="17" id="7Lf-dq-i6y"/>
+                                                <constraint firstAttribute="height" constant="21" id="hI7-7s-NHP"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
@@ -133,23 +130,26 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="v6i-h9-M7P" secondAttribute="trailing" constant="20" type="default" id="6AD-9f-syn"/>
-                                    <constraint firstItem="397-pc-BdS" firstAttribute="leading" secondItem="qya-5a-Dnt" secondAttribute="leading" type="default" id="BoK-Av-8fE"/>
-                                    <constraint firstItem="qya-5a-Dnt" firstAttribute="leading" secondItem="Xvz-lS-5do" secondAttribute="leading" constant="75" id="DlJ-Od-L75"/>
-                                    <constraint firstItem="1QS-cC-cTw" firstAttribute="leading" secondItem="qya-5a-Dnt" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="H8N-GQ-3fX"/>
-                                    <constraint firstItem="bpO-X5-mJt" firstAttribute="leading" secondItem="v6i-h9-M7P" secondAttribute="leading" type="default" id="KBe-bc-Yrv"/>
+                                    <constraint firstAttribute="bottom" secondItem="1QS-cC-cTw" secondAttribute="bottom" constant="10" id="0Xd-7Y-1gf"/>
+                                    <constraint firstItem="bpO-X5-mJt" firstAttribute="leading" secondItem="Xvz-lS-5do" secondAttribute="leading" constant="20" type="default" id="26o-O7-lSo"/>
+                                    <constraint firstItem="v6i-h9-M7P" firstAttribute="leading" secondItem="Xvz-lS-5do" secondAttribute="leading" constant="20" type="default" id="3uL-Ye-8P6"/>
+                                    <constraint firstItem="bpO-X5-mJt" firstAttribute="top" secondItem="Xvz-lS-5do" secondAttribute="top" constant="30" id="Gww-aN-rdi"/>
+                                    <constraint firstItem="1QS-cC-cTw" firstAttribute="bottom" secondItem="397-pc-BdS" secondAttribute="bottom" type="default" id="NIu-WM-EE5"/>
+                                    <constraint firstAttribute="trailing" secondItem="1QS-cC-cTw" secondAttribute="trailing" constant="34" id="NOr-x1-hBQ"/>
+                                    <constraint firstItem="UBl-eJ-ZLV" firstAttribute="baseline" secondItem="397-pc-BdS" secondAttribute="baseline" type="default" id="NcM-Ed-3j5"/>
                                     <constraint firstItem="qya-5a-Dnt" firstAttribute="top" secondItem="bpO-X5-mJt" secondAttribute="top" type="default" id="OKg-Cr-HCo"/>
                                     <constraint firstItem="bpO-X5-mJt" firstAttribute="trailing" secondItem="UBl-eJ-ZLV" secondAttribute="trailing" type="default" id="W1g-hU-akl"/>
-                                    <constraint firstAttribute="bottom" secondItem="1QS-cC-cTw" secondAttribute="bottom" constant="14" id="WUu-4s-wYX"/>
-                                    <constraint firstItem="bpO-X5-mJt" firstAttribute="top" secondItem="Xvz-lS-5do" secondAttribute="top" constant="29" id="X1v-mv-H7x"/>
-                                    <constraint firstItem="UBl-eJ-ZLV" firstAttribute="leading" secondItem="bpO-X5-mJt" secondAttribute="leading" type="default" id="a8w-xK-zSU"/>
-                                    <constraint firstAttribute="bottom" secondItem="UBl-eJ-ZLV" secondAttribute="bottom" constant="9" id="beH-zh-KxV"/>
-                                    <constraint firstItem="qya-5a-Dnt" firstAttribute="bottom" secondItem="bpO-X5-mJt" secondAttribute="bottom" type="default" id="cIz-yU-S3n"/>
+                                    <constraint firstItem="v6i-h9-M7P" firstAttribute="top" secondItem="Xvz-lS-5do" secondAttribute="top" constant="8" id="WpS-1C-31n"/>
+                                    <constraint firstItem="qya-5a-Dnt" firstAttribute="baseline" secondItem="bpO-X5-mJt" secondAttribute="baseline" type="default" id="ZLo-8d-FtM"/>
+                                    <constraint firstItem="397-pc-BdS" firstAttribute="leading" secondItem="qya-5a-Dnt" secondAttribute="leading" type="default" id="apO-BT-EIg"/>
+                                    <constraint firstItem="v6i-h9-M7P" firstAttribute="centerX" secondItem="Xvz-lS-5do" secondAttribute="centerX" type="default" id="cc3-Ta-shr"/>
+                                    <constraint firstItem="qya-5a-Dnt" firstAttribute="leading" secondItem="Xvz-lS-5do" secondAttribute="leading" constant="74" id="dIN-YC-TwF"/>
+                                    <constraint firstItem="UBl-eJ-ZLV" firstAttribute="leading" secondItem="Xvz-lS-5do" secondAttribute="leading" constant="20" type="default" id="gNd-8V-LkC"/>
                                     <constraint firstItem="397-pc-BdS" firstAttribute="top" secondItem="UBl-eJ-ZLV" secondAttribute="top" type="default" id="mCJ-X7-U4U"/>
-                                    <constraint firstItem="v6i-h9-M7P" firstAttribute="top" secondItem="Xvz-lS-5do" secondAttribute="top" constant="7" id="oij-Vv-TIx"/>
-                                    <constraint firstItem="397-pc-BdS" firstAttribute="bottom" secondItem="UBl-eJ-ZLV" secondAttribute="bottom" type="default" id="sNx-Av-MAw"/>
+                                    <constraint firstItem="1QS-cC-cTw" firstAttribute="top" secondItem="397-pc-BdS" secondAttribute="top" type="default" id="roW-VZ-NAb"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="einsatzAlarmstufe" destination="1QS-cC-cTw" id="kN4-7c-TZf"/>
                                     <outlet property="einsatzSubTyp" destination="v6i-h9-M7P" id="sxV-g5-QbU"/>
                                     <segue destination="3Ul-VB-SfC" kind="push" identifier="showEinsatzDetails" id="TMR-Z3-6h7"/>
                                 </connections>
@@ -168,7 +168,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ywu-Mk-qvP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1862" y="154"/>
+            <point key="canvasLocation" x="1849" y="124"/>
         </scene>
         <!--Einsatz Detail View Controller - test-->
         <scene sceneID="Oj0-LO-J1P">
@@ -191,14 +191,32 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" tag="1" title="Details" id="hxe-Z8-9Ck"/>
-                    <navigationItem key="navigationItem" title="Details" id="Zji-81-1rw"/>
+                    <navigationItem key="navigationItem" title="Details" id="Zji-81-1rw">
+                        <barButtonItem key="backBarButtonItem" title="Zururu" id="b5g-qe-FZ1"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="EinsatzDetailsView" destination="koi-Nc-EgI" id="rEr-1U-EgI"/>
                         <outlet property="lblEinsatzNummer" destination="Bov-fH-AkY" id="KpA-oW-dsk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jai-aI-htZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2284" y="83"/>
+            <point key="canvasLocation" x="2266" y="36"/>
+        </scene>
+        <!--View Controller - Item-->
+        <scene sceneID="rwG-tw-2Bn">
+            <objects>
+                <viewController id="R7Z-Yp-zmx" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UNs-xQ-8pk">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="b1y-Pm-hJ6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nQD-Q5-ZT0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2810" y="791"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dCk-3I-NXu">
@@ -224,7 +242,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="TMR-Z3-6h7"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EinsatzDetailViewController : UIViewController
+@interface EinsatzDetailViewController : UIViewController 
 
+@property (strong, nonatomic) IBOutlet UIView *EinsatzDetailsView;
 
 @property (strong, nonatomic) IBOutlet UILabel *lblEinsatzNummer;
 @property (nonatomic, strong) NSString *strEinsartzNummer;

@@ -10,7 +10,7 @@
 
 @implementation EinsatzTableCell
 
-@synthesize einsatzSubTyp;
+@synthesize einsatzSubTyp, einsatzAlarmstufe;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

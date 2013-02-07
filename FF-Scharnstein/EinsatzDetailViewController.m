@@ -32,8 +32,8 @@
     
     lblEinsatzNummer.text = strEinsartzNummer;
     
-    self.navigationItem.title = @"Einsatz Details";
-    
+    self.navigationItem.title = lblEinsatzNummer.text;
+    self.tabBarController.selectedIndex = 1;
 }
 
 - (void)didReceiveMemoryWarning

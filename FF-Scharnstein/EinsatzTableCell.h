@@ -11,4 +11,5 @@
 @interface EinsatzTableCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UILabel *einsatzSubTyp;
+@property (strong, nonatomic) IBOutlet UILabel *einsatzAlarmstufe;
 @end
