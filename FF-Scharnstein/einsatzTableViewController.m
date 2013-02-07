@@ -18,7 +18,7 @@
 
 @implementation EinsatzTableViewController
 
-@synthesize tableView1;
+@synthesize tableView2;
 @synthesize einsatzSubTyp;
 
 
@@ -171,12 +171,11 @@
 {
     if([segue.identifier isEqualToString:@"showEinsatzDetails"])
     {
+        UITabBarController *detailEinsatz = [segue destinationViewController];
+        
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        EinsatzDetailViewController *destViewController = segue.destinationViewController;
-        //destViewController.strEinsartzNummer = [rssOutputData objectAtIndex:indexPath.row];
-        destViewController.strEinsartzNummer = [[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzTyp];
-        //[self.tabBarController setSelectedIndex:1];
-        //self.tabBarController.selectedIndex = 1;
+        EinsatzDetailViewController *destEinsatz = [detailEinsatz.viewControllers objectAtIndex:0];
+        destEinsatz.strEinsatzNummer = [[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzTyp];
     }
 }
 

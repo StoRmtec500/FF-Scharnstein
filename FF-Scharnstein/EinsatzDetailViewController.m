@@ -14,7 +14,7 @@
 
 @implementation EinsatzDetailViewController
 
-@synthesize lblEinsatzNummer, strEinsartzNummer;
+@synthesize lblEinsatzNummer, strEinsatzNummer;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,10 +30,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    lblEinsatzNummer.text = strEinsartzNummer;
+    lblEinsatzNummer.text = strEinsatzNummer;
     
     self.navigationItem.title = lblEinsatzNummer.text;
-    self.tabBarController.selectedIndex = 1;
+    //self.tabBarController.selectedIndex = 1;
 }
 
 - (void)didReceiveMemoryWarning

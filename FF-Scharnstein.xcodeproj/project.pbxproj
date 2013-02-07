@@ -23,6 +23,8 @@
 		37719FD116C27CA800808674 /* UebersichtTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37719FD016C27CA800808674 /* UebersichtTableViewController.m */; };
 		37719FD516C27FCE00808674 /* EinsatzDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37719FD416C27FCE00808674 /* EinsatzDetailViewController.m */; };
 		B846376516C303C500EBA269 /* EinsatzTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B846376416C303C500EBA269 /* EinsatzTableViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B8DD955816C437430078A6FC /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = B8DD955716C437430078A6FC /* appicon.png */; };
+		B8DD955B16C4374B0078A6FC /* appicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8DD955A16C4374B0078A6FC /* appicon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		37719FD416C27FCE00808674 /* EinsatzDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EinsatzDetailViewController.m; sourceTree = "<group>"; };
 		B846376316C303C500EBA269 /* EinsatzTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EinsatzTableViewController.h; sourceTree = "<group>"; };
 		B846376416C303C500EBA269 /* EinsatzTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EinsatzTableViewController.m; sourceTree = "<group>"; };
+		B8DD955716C437430078A6FC /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
+		B8DD955A16C4374B0078A6FC /* appicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appicon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,8 @@
 		37719F5E16C2464200808674 = {
 			isa = PBXGroup;
 			children = (
+				B8DD955A16C4374B0078A6FC /* appicon@2x.png */,
+				B8DD955716C437430078A6FC /* appicon.png */,
 				37719F7316C2464200808674 /* FF-Scharnstein */,
 				37719F6C16C2464200808674 /* Frameworks */,
 				37719F6A16C2464200808674 /* Products */,
@@ -188,6 +194,8 @@
 				37719F8216C2464200808674 /* Default@2x.png in Resources */,
 				37719F8416C2464200808674 /* Default-568h@2x.png in Resources */,
 				37719F8716C2464200808674 /* MainStoryboard.storyboard in Resources */,
+				B8DD955816C437430078A6FC /* appicon.png in Resources */,
+				B8DD955B16C4374B0078A6FC /* appicon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
