@@ -73,6 +73,15 @@
     if([elementName isEqualToString:@"alarmstufe"]){
 		xmlStringFileObject.xmlEinsatzAlarmstufe=nodeContent;
 	}
+    if([elementName isEqualToString:@"default"]){
+		xmlStringFileObject.xmlEinsatzAdresse=nodeContent;
+	}
+    if([elementName isEqualToString:@"emun"]){
+		xmlStringFileObject.xmlEinsatzAdresse2=nodeContent;
+	}
+    if([elementName isEqualToString:@"bezirk"]){
+		xmlStringFileObject.xmlEinsatzBezirk=nodeContent;
+	}
 	//finally when we reaches the end of tag i am adding data inside the NSMutableArray
 	if([elementName isEqualToString:@"einsatz"]){
         
@@ -96,6 +105,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(print_Message)];
     
 
     
@@ -154,6 +164,9 @@
 	//cell.detailTextLabel.text=[[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzTyp];
     cell.einsatzSubTyp.text=[[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzTyp];
 	cell.einsatzAlarmstufe.text=[[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzAlarmstufe];
+    cell.einsatzAdresse.text=[[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzAdresse];
+    cell.einsatzAdresse2.text=[[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzAdresse2];
+    cell.einsatzBezirk.text=[[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzBezirk];
 	return cell;
 }
 
@@ -202,6 +215,8 @@
     NSLog(@"refreshing");
     [self XMLURL];
     [self.tableView reloadData];
+    //[self.activityIndicator setHidden:FALSE];
+    //[self.activityIndicator startAnimating];
     [refreshControl endRefreshing];
 }
 

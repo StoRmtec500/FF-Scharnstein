@@ -34,6 +34,8 @@
     
     self.navigationItem.title = lblEinsatzNummer.text;
     //self.tabBarController.selectedIndex = 1;
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(print_Message)];
 }
 
 - (void)didReceiveMemoryWarning

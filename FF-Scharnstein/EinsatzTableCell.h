@@ -12,4 +12,7 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *einsatzSubTyp;
 @property (strong, nonatomic) IBOutlet UILabel *einsatzAlarmstufe;
+@property (strong, nonatomic) IBOutlet UILabel *einsatzAdresse;
+@property (strong, nonatomic) IBOutlet UILabel *einsatzAdresse2;
+@property (strong, nonatomic) IBOutlet UILabel *einsatzBezirk;
 @end
