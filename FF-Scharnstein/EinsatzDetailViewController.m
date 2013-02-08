@@ -32,7 +32,8 @@
     
     lblEinsatzNummer.text = strEinsatzNummer;
     
-    self.navigationItem.title = lblEinsatzNummer.text;
+    //self.navigationItem.title = lblEinsatzNummer.text;
+    [[self navigationItem] setTitle:@"Über Code2"];
     //self.tabBarController.selectedIndex = 1;
 }
 
