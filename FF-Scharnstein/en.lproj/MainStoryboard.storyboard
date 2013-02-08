@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C2034" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ktr-6D-CBq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ktr-6D-CBq">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -12,6 +12,22 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pZU-5q-QPo">
+                            <rect key="frame" x="0.0" y="101" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal" title="Button">
+                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="InfoView:" destination="l4h-yX-PU9" eventType="touchUpInside" id="cvA-0A-9ET"/>
+                                <segue destination="kmc-Em-g5g" kind="push" id="Ajm-30-Lyg"/>
+                            </connections>
+                        </button>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="einsatzCell" textLabel="U6D-TA-NAH" style="IBUITableViewCellStyleDefault" id="Q83-pR-qLW">
                                 <rect key="frame" x="0.0" y="46" width="320" height="45"/>
@@ -54,7 +70,6 @@
                             </button>
                             <connections>
                                 <action selector="InfoView:" destination="l4h-yX-PU9" id="sJD-wl-L8k"/>
-                                <segue destination="kmc-Em-g5g" kind="modal" id="tqS-Rf-CA6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -63,20 +78,34 @@
             </objects>
             <point key="canvasLocation" x="983" y="199"/>
         </scene>
-        <!--View Controller - Info-->
+        <!--Info View Controller - Info-->
         <scene sceneID="fn5-AJ-87o">
             <objects>
-                <viewController id="kmc-Em-g5g" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="infoView" id="kmc-Em-g5g" customClass="InfoViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jRT-HO-NLv">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HXP-Bc-oyW">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HXP-Bc-oyW" firstAttribute="top" secondItem="jRT-HO-NLv" secondAttribute="top" type="default" id="Dsw-DG-Ykn"/>
+                            <constraint firstItem="HXP-Bc-oyW" firstAttribute="leading" secondItem="jRT-HO-NLv" secondAttribute="leading" type="default" id="YIj-RJ-eIQ"/>
+                            <constraint firstItem="HXP-Bc-oyW" firstAttribute="trailing" secondItem="jRT-HO-NLv" secondAttribute="trailing" type="default" id="jxc-tz-gFV"/>
+                            <constraint firstItem="HXP-Bc-oyW" firstAttribute="bottom" secondItem="jRT-HO-NLv" secondAttribute="bottom" type="default" id="ykg-Q0-nhX"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Info" id="Qoy-o2-ZpJ"/>
+                    <connections>
+                        <outlet property="_viewWeb" destination="HXP-Bc-oyW" id="52v-TX-iLO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hpH-1T-KL9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1358" y="-472"/>
+            <point key="canvasLocation" x="1410" y="-483"/>
         </scene>
         <!--Einsatz Table View Controller - Einsatz-->
         <scene sceneID="Fb6-P2-inu">
@@ -264,7 +293,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="l4h-yX-PU9" kind="relationship" relationship="rootViewController" id="taR-7Q-6RW"/>
+                        <segue destination="l4h-yX-PU9" kind="relationship" relationship="rootViewController" id="DVe-lO-xDt"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fyL-CA-AhD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -295,6 +324,12 @@
             <relationships>
                 <relationship kind="outlet" name="einsatzSubTyp" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="tableView2" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="InfoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfoViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="_viewWeb" candidateClass="UIWebView"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">

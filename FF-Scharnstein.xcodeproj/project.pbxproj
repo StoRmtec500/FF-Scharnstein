@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		372EA91616C5488D001A55C5 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 372EA91516C5488D001A55C5 /* InfoViewController.m */; };
 		3737F0FD16C39112000975C8 /* XMLStringFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 3737F0FC16C39112000975C8 /* XMLStringFile.m */; };
 		3737F10D16C3ABC6000975C8 /* EinsatzTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3737F10C16C3ABC6000975C8 /* EinsatzTableCell.m */; };
 		37719F6E16C2464200808674 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37719F6D16C2464200808674 /* UIKit.framework */; };
@@ -28,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		372EA91416C5488D001A55C5 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		372EA91516C5488D001A55C5 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		3737F0FB16C39112000975C8 /* XMLStringFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLStringFile.h; sourceTree = "<group>"; };
 		3737F0FC16C39112000975C8 /* XMLStringFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLStringFile.m; sourceTree = "<group>"; };
 		3737F10B16C3ABC6000975C8 /* EinsatzTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EinsatzTableCell.h; sourceTree = "<group>"; };
@@ -119,6 +122,8 @@
 				3737F10C16C3ABC6000975C8 /* EinsatzTableCell.m */,
 				3737F0FB16C39112000975C8 /* XMLStringFile.h */,
 				3737F0FC16C39112000975C8 /* XMLStringFile.m */,
+				372EA91416C5488D001A55C5 /* InfoViewController.h */,
+				372EA91516C5488D001A55C5 /* InfoViewController.m */,
 				37719F7416C2464200808674 /* Supporting Files */,
 			);
 			path = "FF-Scharnstein";
@@ -214,6 +219,7 @@
 				B846376516C303C500EBA269 /* EinsatzTableViewController.m in Sources */,
 				3737F0FD16C39112000975C8 /* XMLStringFile.m in Sources */,
 				3737F10D16C3ABC6000975C8 /* EinsatzTableCell.m in Sources */,
+				372EA91616C5488D001A55C5 /* InfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

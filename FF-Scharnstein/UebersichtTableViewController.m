@@ -7,6 +7,7 @@
 //
 
 #import "UebersichtTableViewController.h"
+#import "InfoViewController.h"
 
 @interface UebersichtTableViewController ()
 
@@ -125,6 +126,20 @@
 }
 
 - (IBAction)InfoView:(id)sender {
-    
+    [self presentViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"infoView"] animated:YES completion:nil];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"infoView"])
+    {
+        InfoViewController *viewInfo = segue.destinationViewController;
+        [self.navigationController pushViewController:viewInfo animated:YES];
+        //nfoViewController *info = segue.destinationViewController;
+        
+      //  NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+      //  EinsatzDetailViewController *destEinsatz = [detailEinsatz.viewControllers objectAtIndex:0];
+      //  destEinsatz.strEinsatzNummer = [[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzTyp];
+    }
 }
 @end
