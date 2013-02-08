@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C2034" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ktr-6D-CBq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ktr-6D-CBq">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -156,19 +156,35 @@
             <objects>
                 <tabBarController definesPresentationContext="YES" id="3il-xg-4Fk" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="fZb-Fq-qsT"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="6zv-lS-z3b">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="3Ul-VB-SfC" kind="relationship" relationship="viewControllers" id="opY-rg-ahw"/>
+                        <segue destination="OFn-F9-Hef" kind="relationship" relationship="viewControllers" id="fdm-cB-L7T"/>
+                        <segue destination="3Ul-VB-SfC" kind="relationship" relationship="viewControllers" id="yj1-Xq-hc3"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="84B-XI-hIP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1861" y="199"/>
+        </scene>
+        <!--View Controller - Karte-->
+        <scene sceneID="eVX-dl-TkX">
+            <objects>
+                <viewController id="OFn-F9-Hef" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fAE-eA-di3">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Karte" id="XeX-ka-suT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qk5-1n-Cbs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2354" y="338"/>
         </scene>
         <!--Einsatz Detail View Controller - test-->
         <scene sceneID="Oj0-LO-J1P">
@@ -190,18 +206,17 @@
                             <constraint firstItem="Bov-fH-AkY" firstAttribute="leading" secondItem="koi-Nc-EgI" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="cyR-b6-9EU"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="1" title="Details" id="hxe-Z8-9Ck"/>
-                    <navigationItem key="navigationItem" title="Details" id="Zji-81-1rw">
-                        <barButtonItem key="backBarButtonItem" title="Zururu" id="b5g-qe-FZ1"/>
-                    </navigationItem>
+                    <tabBarItem key="tabBarItem" title="Item" id="G9P-db-UuU"/>
+                    <navigationItem key="navigationItem" id="Zji-81-1rw" propertyAccessControl="all"/>
                     <connections>
                         <outlet property="EinsatzDetailsView" destination="koi-Nc-EgI" id="BXB-Od-ajp"/>
                         <outlet property="lblEinsatzNummer" destination="Bov-fH-AkY" id="RgZ-KX-303"/>
+                        <outlet property="navItemEinsatzDetails" destination="Zji-81-1rw" id="GBI-TN-fHL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jai-aI-htZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2290" y="199"/>
+            <point key="canvasLocation" x="2354" y="-332"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dCk-3I-NXu">
@@ -222,6 +237,36 @@
             <point key="canvasLocation" x="576" y="199"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="EinsatzDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EinsatzDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="EinsatzDetailsView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="lblEinsatzNummer" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="navItemEinsatzDetails" candidateClass="UINavigationItem"/>
+            </relationships>
+        </class>
+        <class className="EinsatzTableCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EinsatzTableCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="einsatzAlarmstufe" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="einsatzSubTyp" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="EinsatzTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EinsatzTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="einsatzSubTyp" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tableView2" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="UebersichtTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UebersichtTableViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

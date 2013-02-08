@@ -14,7 +14,7 @@
 
 @implementation EinsatzDetailViewController
 
-@synthesize lblEinsatzNummer, strEinsatzNummer;
+@synthesize lblEinsatzNummer, strEinsatzNummer, navItemEinsatzDetails;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,7 +32,7 @@
     
     lblEinsatzNummer.text = strEinsatzNummer;
     
-    self.navigationItem.title = lblEinsatzNummer.text;
+    navItemEinsatzDetails.title = lblEinsatzNummer.text;
     //self.tabBarController.selectedIndex = 1;
 }
 

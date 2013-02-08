@@ -11,6 +11,7 @@
 @interface EinsatzDetailViewController : UIViewController 
 
 @property (strong, nonatomic) IBOutlet UIView *EinsatzDetailsView;
+@property (strong, nonatomic) IBOutlet UINavigationItem *navItemEinsatzDetails;
 
 @property (strong, nonatomic) IBOutlet UILabel *lblEinsatzNummer;
 @property (nonatomic, strong) NSString *strEinsatzNummer;
