@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ktr-6D-CBq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C2034" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ktr-6D-CBq">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -163,28 +163,12 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="stF-Nt-yoH" kind="relationship" relationship="viewControllers" id="Xbr-pj-HWi"/>
-                        <segue destination="3Ul-VB-SfC" kind="relationship" relationship="viewControllers" id="uOY-7W-gp0"/>
+                        <segue destination="3Ul-VB-SfC" kind="relationship" relationship="viewControllers" id="opY-rg-ahw"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="84B-XI-hIP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1861" y="199"/>
-        </scene>
-        <!--View Controller - Karte-->
-        <scene sceneID="mF8-B7-XNa">
-            <objects>
-                <viewController id="stF-Nt-yoH" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="yoU-bl-Wnb">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Karte" id="9uB-Xa-WR4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="abP-UM-F9h" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2325" y="498"/>
         </scene>
         <!--Einsatz Detail View Controller - test-->
         <scene sceneID="Oj0-LO-J1P">
@@ -206,12 +190,9 @@
                             <constraint firstItem="Bov-fH-AkY" firstAttribute="leading" secondItem="koi-Nc-EgI" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="cyR-b6-9EU"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Pgl-dH-15e"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Details" id="hxe-Z8-9Ck"/>
                     <navigationItem key="navigationItem" title="Details" id="Zji-81-1rw">
                         <barButtonItem key="backBarButtonItem" title="Zururu" id="b5g-qe-FZ1"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="Title" value="asdasdasd"/>
-                        </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <connections>
                         <outlet property="EinsatzDetailsView" destination="koi-Nc-EgI" id="BXB-Od-ajp"/>
@@ -220,7 +201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jai-aI-htZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2325" y="-187"/>
+            <point key="canvasLocation" x="2290" y="199"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dCk-3I-NXu">
@@ -241,35 +222,6 @@
             <point key="canvasLocation" x="576" y="199"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="EinsatzDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EinsatzDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="EinsatzDetailsView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="lblEinsatzNummer" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="EinsatzTableCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EinsatzTableCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="einsatzAlarmstufe" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="einsatzSubTyp" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="EinsatzTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EinsatzTableViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="einsatzSubTyp" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tableView2" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="UebersichtTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UebersichtTableViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
