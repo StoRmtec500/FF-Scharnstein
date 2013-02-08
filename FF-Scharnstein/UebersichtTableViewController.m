@@ -124,4 +124,7 @@
      */
 }
 
+- (IBAction)InfoView:(id)sender {
+    
+}
 @end

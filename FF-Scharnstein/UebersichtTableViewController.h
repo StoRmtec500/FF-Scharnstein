@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface UebersichtTableViewController : UITableViewController
+- (IBAction)InfoView:(id)sender;
 
 @end
