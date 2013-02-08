@@ -10,6 +10,9 @@
 #import "InfoViewController.h"
 
 @interface UebersichtTableViewController ()
+{
+    InfoViewController *infoView;
+}
 
 @end
 
@@ -36,12 +39,6 @@
 {
     [super viewDidLoad];
 
-    //self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonItemStylePlain target:self action:@selector(print_Message)];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     dataArray = [[NSMutableArray alloc]init];
     
@@ -125,21 +122,13 @@
      */
 }
 
-- (IBAction)InfoView:(id)sender {
-    [self presentViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"infoView"] animated:YES completion:nil];
+-(void)loadView
+{
+    [super loadView];
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (IBAction)InfoView:(id)sender
 {
-    if([segue.identifier isEqualToString:@"infoView"])
-    {
-        InfoViewController *viewInfo = segue.destinationViewController;
-        [self.navigationController pushViewController:viewInfo animated:YES];
-        //nfoViewController *info = segue.destinationViewController;
-        
-      //  NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-      //  EinsatzDetailViewController *destEinsatz = [detailEinsatz.viewControllers objectAtIndex:0];
-      //  destEinsatz.strEinsatzNummer = [[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzTyp];
-    }
+    [self.navigationController pushViewController:infoView animated:UIModalPresentationPageSheet];
 }
 @end

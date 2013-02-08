@@ -20,6 +20,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+
     }
     return self;
 }
@@ -32,6 +33,9 @@
     NSURL *url = [NSURL URLWithString:fullURL];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [_viewWeb loadRequest:request];
+
+    self.navigationItem.title = @"Infos zur APP";
+    
 }
 
 - (void)didReceiveMemoryWarning

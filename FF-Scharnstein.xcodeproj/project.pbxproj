@@ -35,7 +35,7 @@
 		3737F0FC16C39112000975C8 /* XMLStringFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLStringFile.m; sourceTree = "<group>"; };
 		3737F10B16C3ABC6000975C8 /* EinsatzTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EinsatzTableCell.h; sourceTree = "<group>"; };
 		3737F10C16C3ABC6000975C8 /* EinsatzTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EinsatzTableCell.m; sourceTree = "<group>"; };
-		37719F6916C2464200808674 /* FF-Scharnstein.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FF-Scharnstein.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		37719F6916C2464200808674 /* FFScharnstein.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FFScharnstein.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37719F6D16C2464200808674 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		37719F6F16C2464200808674 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		37719F7116C2464200808674 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -89,7 +89,7 @@
 		37719F6A16C2464200808674 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				37719F6916C2464200808674 /* FF-Scharnstein.app */,
+				37719F6916C2464200808674 /* FFScharnstein.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -160,7 +160,7 @@
 			);
 			name = "FF-Scharnstein";
 			productName = "FF-Scharnstein";
-			productReference = 37719F6916C2464200808674 /* FF-Scharnstein.app */;
+			productReference = 37719F6916C2464200808674 /* FFScharnstein.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -301,7 +301,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FF-Scharnstein/FF-Scharnstein-Prefix.pch";
 				INFOPLIST_FILE = "FF-Scharnstein/FF-Scharnstein-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FFScharnstein;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -312,7 +312,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FF-Scharnstein/FF-Scharnstein-Prefix.pch";
 				INFOPLIST_FILE = "FF-Scharnstein/FF-Scharnstein-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FFScharnstein;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
