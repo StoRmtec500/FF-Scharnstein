@@ -19,10 +19,12 @@
 }
 
 @property (retain, nonatomic) IBOutlet UILabel *einsatzSubTyp;
-
+@property(strong, nonatomic) NSString *einsatzurl;
 @property (nonatomic, strong) IBOutlet UITableView *tableView2;
+@property (strong, nonatomic) IBOutlet UILabel *lblaktuellerEinsatz;
 @property (nonatomic) BOOL isAscending;
 
+@property (nonatomic,strong) XMLStringFile *einsatz;
 
 -(void) XMLURL;
 @end

@@ -29,7 +29,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="ic6-y6-Gtk" kind="push" id="0DQ-Em-MH7"/>
+                                    <segue destination="ic6-y6-Gtk" kind="push" identifier="url" id="F46-0x-ZvG"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -134,6 +134,13 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <label key="tableFooterView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Es sind aktuell keine Einsätze" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xaj-jW-Fac">
+                            <rect key="frame" x="0.0" y="138" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="einsatzDetail" rowHeight="80" id="Xvz-lS-5do" customClass="EinsatzTableCell">
                                 <rect key="frame" x="0.0" y="46" width="320" height="82"/>
@@ -169,7 +176,7 @@
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Bezirk:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBl-eJ-ZLV">
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="Dz9-dd-cCL"/>
+                                                <constraint firstAttribute="height" constant="21" id="jfE-ax-ega"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -208,11 +215,11 @@
                                     <constraint firstItem="bpO-X5-mJt" firstAttribute="leading" secondItem="Xvz-lS-5do" secondAttribute="leading" constant="20" type="default" id="26o-O7-lSo"/>
                                     <constraint firstAttribute="bottom" secondItem="UBl-eJ-ZLV" secondAttribute="bottom" constant="9" id="2C8-8V-R3X"/>
                                     <constraint firstItem="v6i-h9-M7P" firstAttribute="leading" secondItem="Xvz-lS-5do" secondAttribute="leading" constant="20" type="default" id="3uL-Ye-8P6"/>
-                                    <constraint firstItem="UBl-eJ-ZLV" firstAttribute="top" secondItem="397-pc-BdS" secondAttribute="top" type="default" id="663-Ye-wJZ"/>
                                     <constraint firstItem="qya-5a-Dnt" firstAttribute="baseline" secondItem="bpO-X5-mJt" secondAttribute="baseline" type="default" id="MFj-XI-opM"/>
                                     <constraint firstItem="UBl-eJ-ZLV" firstAttribute="baseline" secondItem="397-pc-BdS" secondAttribute="baseline" type="default" id="NcM-Ed-3j5"/>
                                     <constraint firstItem="qya-5a-Dnt" firstAttribute="top" secondItem="bpO-X5-mJt" secondAttribute="top" type="default" id="Qqc-Bg-FfH"/>
                                     <constraint firstItem="bpO-X5-mJt" firstAttribute="top" secondItem="Xvz-lS-5do" secondAttribute="top" constant="21" id="REp-MC-sK6"/>
+                                    <constraint firstItem="397-pc-BdS" firstAttribute="top" secondItem="UBl-eJ-ZLV" secondAttribute="top" type="default" id="Ul6-gp-llp"/>
                                     <constraint firstItem="bpO-X5-mJt" firstAttribute="trailing" secondItem="UBl-eJ-ZLV" secondAttribute="trailing" type="default" id="W1g-hU-akl"/>
                                     <constraint firstAttribute="trailing" secondItem="1QS-cC-cTw" secondAttribute="trailing" constant="31" id="WrQ-i2-vjt"/>
                                     <constraint firstAttribute="bottom" secondItem="1QS-cC-cTw" secondAttribute="bottom" constant="10" id="bVl-vW-xCv"/>
@@ -239,15 +246,14 @@
                             <outlet property="delegate" destination="ic6-y6-Gtk" id="ScE-uF-CKv"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Einsätze" id="WWd-Gt-kHZ"/>
                     <navigationItem key="navigationItem" title="Einsätze" id="bf8-fy-swm"/>
                     <connections>
-                        <outlet property="tableView2" destination="ZVI-fM-jKo" id="FPb-Mh-OnT"/>
+                        <outlet property="lblaktuellerEinsatz" destination="xaj-jW-Fac" id="Z1c-Yr-Zcp"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ywu-Mk-qvP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1410" y="199"/>
+            <point key="canvasLocation" x="1441" y="199"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="QzY-b4-v6L">
@@ -266,7 +272,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="84B-XI-hIP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1861" y="199"/>
+            <point key="canvasLocation" x="1877" y="199"/>
         </scene>
         <!--Einsatz Detail View Controller - test-->
         <scene sceneID="Oj0-LO-J1P">
@@ -299,7 +305,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jai-aI-htZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2290" y="199"/>
+            <point key="canvasLocation" x="3047" y="199"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dCk-3I-NXu">
@@ -346,6 +352,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EinsatzTableViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="einsatzSubTyp" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblaktuellerEinsatz" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="tableView2" candidateClass="UITableView"/>
             </relationships>
         </class>

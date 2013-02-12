@@ -19,7 +19,7 @@
 @implementation EinsatzTableViewController
 
 @synthesize tableView2;
-@synthesize einsatzSubTyp;
+@synthesize einsatzSubTyp, lblaktuellerEinsatz, einsatzurl;
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -47,6 +47,11 @@
     
 	if([elementName isEqualToString:@"einsatz"]){
 		xmlStringFileObject =[[XMLStringFile alloc]init];
+        lblaktuellerEinsatz.hidden = YES;
+	}else if ([elementName isEqualToString:@"einsaetze"])
+    {
+        lblaktuellerEinsatz.hidden = NO;
+
 	}
 	
 }
@@ -107,8 +112,6 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     // self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(print_Message)];
     
-
-    
     
 #pragma mark - Refresh für die Tabelle
     //****** Refresh eingebaut bei den Einsätzen *****//
@@ -117,7 +120,7 @@
     [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
     [self setRefreshControl:refreshControl];
     
-    [self XMLURL];
+   [self XMLURL];
 }
 
 - (void)didReceiveMemoryWarning
@@ -155,7 +158,7 @@
 		//add some extra text on table cell .........
 		cell = [[[EinsatzTableCell alloc] initWithStyle: UITableViewCellStyleSubtitle   reuseIdentifier:MyIdentifier] autorelease];
 	}
-    
+    NSLog(@"EinsatzTableViewgekloclt2");
 	// Set up the cell
 	//[cell.textLabel setFont:[UIFont fontWithName:@"Verdana" size:12]];
 	//[cell.detailTextLabel setFont:[UIFont fontWithName:@"Verdana" size:12]];
@@ -184,7 +187,7 @@
 {
     if([segue.identifier isEqualToString:@"showEinsatzDetails"])
     {
-        UITabBarController *detailEinsatz = [segue destinationViewController];
+        UINavigationController *detailEinsatz = [segue destinationViewController];
         
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         EinsatzDetailViewController *destEinsatz = [detailEinsatz.viewControllers objectAtIndex:0];
@@ -195,10 +198,13 @@
 -(void)XMLURL
 {
     rssOutputData = [[NSMutableArray alloc]init];
-    
+    NSString *tempurl = [[NSString alloc] initWithFormat:@"%@",einsatzurl];
+   // NSURL *url = [NSURL URLWithString:tempurl];
+    NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@", tempurl]];
+        NSLog(@"EinsatzTable: %@", einsatzurl);
     //declare the object of allocated variable
-    NSData *xmlData=[[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:@"http://intranet.ooelfv.at/webext2/rss/webext2_laufend.xml"]];
-    
+    NSData *xmlData=[[NSData alloc]initWithContentsOfURL:url];
+    NSLog(@"%@", url);
     //allocate memory for parser as well as
     xmlParserObject =[[NSXMLParser alloc]initWithData:xmlData];
     [xmlParserObject setDelegate:self];

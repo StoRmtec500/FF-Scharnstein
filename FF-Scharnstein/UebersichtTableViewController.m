@@ -8,6 +8,7 @@
 
 #import "UebersichtTableViewController.h"
 #import "InfoViewController.h"
+#import "EinsatzTableViewController.h"
 
 @interface UebersichtTableViewController ()
 {
@@ -26,6 +27,8 @@
     NSArray *einsatz;
 }
 
+@synthesize einsatzurl1;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -37,7 +40,7 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+
 
     
     dataArray = [[NSMutableArray alloc]init];
@@ -49,12 +52,33 @@
     NSArray *secondItem = [[NSArray alloc] initWithObjects:@"6 Stunden", @"aktueller Tag", @"2 Tage", @"aktuelle Woche", @"letztes Monat", nil];
     NSDictionary *secondItemArrayDict = [NSDictionary dictionaryWithObject:secondItem forKey:@"data"];
     [dataArray addObject:secondItemArrayDict];
+    
+    EinsatzTableViewController *einsatzTableView = [[EinsatzTableViewController alloc] initWithNibName:@"EinsatzTableViewController" bundle:nil];
+    einsatzTableView.einsatzurl = einsatzurl1;
+    
+        [super viewDidLoad];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0 &&
+        indexPath.row == 0) {
+        einsatzurl1 = @"http://intranet.ooelfv.at/webext2/rss/webext2_laufend.xml";
+        NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@", einsatzurl1]];
+        NSLog(@"%@", url);
+    }
+    if (indexPath.section == 1 &&
+        indexPath.row == 0) {
+        einsatzurl1 = @"http://intranet.ooelfv.at/webext2/rss/webext2_6stunden.xml";
+        NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@", einsatzurl1]];
+        NSLog(@"%@", url);
+    }
 }
 
 #pragma mark - Table view data source
@@ -111,20 +135,16 @@
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-}
 
--(void)loadView
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    [super loadView];
+    if([segue.identifier isEqualToString:@"url"])
+    {
+        //UITableViewController *urlEinsatz = [segue destinationViewController];
+        EinsatzTableViewController *destEinsatz = [segue destinationViewController];
+        destEinsatz.einsatzurl= einsatzurl1;
+    }
 }
 
 - (IBAction)InfoView:(id)sender

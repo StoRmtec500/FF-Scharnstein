@@ -11,4 +11,6 @@
 @interface UebersichtTableViewController : UITableViewController
 - (IBAction)InfoView:(id)sender;
 
+@property (nonatomic, copy) NSString *einsatzurl1;
+
 @end
