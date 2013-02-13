@@ -99,6 +99,12 @@
     if([elementName isEqualToString:@"bezirk"]){
 		xmlStringFileObject.xmlEinsatzBezirk=nodeContent;
 	}
+    if([elementName isEqualToString:@"startzeit"]){
+		xmlStringFileObject.xmlEinsatzStartzeit=nodeContent;
+	}
+    if([elementName isEqualToString:@"inzeit"]){
+		xmlStringFileObject.xmlEinsatzEnde=nodeContent;
+	}
 	//finally when we reaches the end of tag i am adding data inside the NSMutableArray
 	if([elementName isEqualToString:@"einsatz"]){
         
@@ -166,6 +172,9 @@
         destEinsatz.strEinsatzSubTyp = [[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzSubTyp];
         destEinsatz.strEinsatzNummer = [[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzNummer];
         destEinsatz.strEinsatzAdresse = [[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzAdresse];
+        destEinsatz.strEinsartAdresse2 = [[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzAdresse2];
+        destEinsatz.strEinsatzStartzeit = [[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzStartzeit];
+        destEinsatz.strEinsartEnde = [[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzEnde];
     }
 }
 

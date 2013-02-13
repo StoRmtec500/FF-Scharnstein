@@ -11,9 +11,9 @@
 @interface XMLStringFile : NSObject
 
 {
-    NSString *xmlEinsatzNummer, *xmlEinsatzSubTyp, *xmlEinsatzAlarmstufe, *xmlEinsatzAdresse, *xmlEinsatzAdresse2, *xmlEinsatzBezirk, *xmlEinsatzURL;
+    NSString *xmlEinsatzNummer, *xmlEinsatzSubTyp, *xmlEinsatzAlarmstufe, *xmlEinsatzAdresse, *xmlEinsatzAdresse2, *xmlEinsatzBezirk, *xmlEinsatzURL, *xmlEinsartStartzeit, *xmlEinsatzEnde;
 }
 
-@property(nonatomic, retain)NSString *xmlEinsatzNummer,*xmlEinsatzSubTyp,*xmlEinsatzAlarmstufe, *xmlEinsatzAdresse, *xmlEinsatzAdresse2, *xmlEinsatzBezirk;
+@property(nonatomic, retain)NSString *xmlEinsatzNummer,*xmlEinsatzSubTyp,*xmlEinsatzAlarmstufe, *xmlEinsatzAdresse, *xmlEinsatzAdresse2, *xmlEinsatzBezirk, *xmlEinsatzStartzeit, *xmlEinsatzEnde;
 
 @end
