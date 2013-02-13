@@ -14,7 +14,7 @@
 
 @implementation EinsatzDetailViewController
 
-@synthesize lblEinsatzNummer, strEinsatzNummer;
+@synthesize lblEinsatzNummer, strEinsatzNummer, lblEinsatzSubTyp, strEinsatzSubTyp, lblEinsatzAdresse, strEinsatzAdresse;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,7 +30,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    lblEinsatzNummer.text = strEinsatzNummer;
+    lblEinsatzNummer.text = [NSString stringWithFormat:@"Einsatz: %@", strEinsatzNummer];
+    lblEinsatzSubTyp.text = strEinsatzSubTyp;
+    lblEinsatzAdresse.text = strEinsatzAdresse;
     
     self.navigationItem.title = lblEinsatzNummer.text;
     //self.tabBarController.selectedIndex = 1;
@@ -45,4 +47,9 @@
 }
 
 
+- (void)viewDidUnload {
+    [self setLblEinsatzSubTyp:nil];
+    [self setLblEinsatzAdresse:nil];
+    [super viewDidUnload];
+}
 @end

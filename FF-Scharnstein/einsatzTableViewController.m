@@ -85,7 +85,7 @@
 		xmlStringFileObject.xmlEinsatzNummer=nodeContent;
 	}
 	if([elementName isEqualToString:@"einsatzsubtyp"]){
-		xmlStringFileObject.xmlEinsatzTyp=nodeContent;
+		xmlStringFileObject.xmlEinsatzSubTyp=nodeContent;
 	}
     if([elementName isEqualToString:@"alarmstufe"]){
 		xmlStringFileObject.xmlEinsatzAlarmstufe=nodeContent;
@@ -146,7 +146,7 @@
 		cell = [[EinsatzTableCell alloc] initWithStyle: UITableViewCellStyleSubtitle   reuseIdentifier:MyIdentifier];
 	}
 
-    cell.einsatzSubTyp.text=[[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzTyp];
+    cell.einsatzSubTyp.text=[[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzSubTyp];
 	cell.einsatzAlarmstufe.text=[[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzAlarmstufe];
     cell.einsatzAdresse.text=[[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzAdresse];
     cell.einsatzAdresse2.text=[[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzAdresse2];
@@ -163,7 +163,9 @@
         
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         EinsatzDetailViewController *destEinsatz = [detailEinsatz.viewControllers objectAtIndex:0];
-        destEinsatz.strEinsatzNummer = [[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzTyp];
+        destEinsatz.strEinsatzSubTyp = [[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzSubTyp];
+        destEinsatz.strEinsatzNummer = [[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzNummer];
+        destEinsatz.strEinsatzAdresse = [[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzAdresse];
     }
 }
 

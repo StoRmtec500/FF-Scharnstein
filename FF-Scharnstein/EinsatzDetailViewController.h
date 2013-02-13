@@ -13,5 +13,9 @@
 @property (strong, nonatomic) IBOutlet UIView *EinsatzDetailsView;
 
 @property (strong, nonatomic) IBOutlet UILabel *lblEinsatzNummer;
+@property (strong, nonatomic) IBOutlet UILabel *lblEinsatzSubTyp;
+@property (strong, nonatomic) IBOutlet UILabel *lblEinsatzAdresse;
 @property (nonatomic, strong) NSString *strEinsatzNummer;
+@property (nonatomic, strong) NSString *strEinsatzSubTyp;
+@property (nonatomic, strong) NSString *strEinsatzAdresse;
 @end

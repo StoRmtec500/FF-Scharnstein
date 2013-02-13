@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ktr-6D-CBq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C2034" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ktr-6D-CBq">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--Uebersicht Table View Controller - Übersicht-->
@@ -267,12 +267,12 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="3Ul-VB-SfC" kind="relationship" relationship="viewControllers" id="opY-rg-ahw"/>
+                        <segue destination="3Ul-VB-SfC" kind="relationship" relationship="viewControllers" id="GRe-ag-OXc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="84B-XI-hIP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1877" y="199"/>
+            <point key="canvasLocation" x="1874" y="199"/>
         </scene>
         <!--Einsatz Detail View Controller - test-->
         <scene sceneID="Oj0-LO-J1P">
@@ -282,16 +282,83 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bov-fH-AkY">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="231" translatesAutoresizingMaskIntoConstraints="NO" id="Mj1-rZ-djc">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="231" id="ieS-wG-uPe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Adresse:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZE-6g-ppP">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="69" id="PlA-ai-omQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="231" translatesAutoresizingMaskIntoConstraints="NO" id="FQE-Mh-QqG">
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Einsatz:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZB-Od-eef">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="KHk-4p-Cqh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="clw-6h-GTW">
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="352" id="0Qb-Qf-XyL"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" rowHeight="92" id="O64-41-ajv">
+                                        <rect key="frame" x="0.0" y="46" width="320" height="94"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="91"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" text="fgfgfgjjljljlhkjhkgkhgjhgjhgjgjgj" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="284" translatesAutoresizingMaskIntoConstraints="NO" id="Bov-fH-AkY">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="284" id="6dh-Kv-hLa"/>
+                                                        <constraint firstAttribute="height" constant="22" id="F3G-qr-ubN"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="Bov-fH-AkY" firstAttribute="leading" secondItem="O64-41-ajv" secondAttribute="leading" constant="17" id="9YE-xb-sri"/>
+                                            <constraint firstItem="Bov-fH-AkY" firstAttribute="top" secondItem="O64-41-ajv" secondAttribute="top" constant="6" id="U58-fb-Aia"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Bov-fH-AkY" firstAttribute="top" secondItem="koi-Nc-EgI" secondAttribute="top" constant="45" id="XNi-69-Et9"/>
-                            <constraint firstItem="Bov-fH-AkY" firstAttribute="leading" secondItem="koi-Nc-EgI" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="cyR-b6-9EU"/>
+                            <constraint firstItem="gZB-Od-eef" firstAttribute="leading" secondItem="jZE-6g-ppP" secondAttribute="leading" type="default" id="8Zg-jL-LEC"/>
+                            <constraint firstItem="gZB-Od-eef" firstAttribute="top" secondItem="koi-Nc-EgI" secondAttribute="top" constant="45" id="CcH-hG-tTk"/>
+                            <constraint firstItem="FQE-Mh-QqG" firstAttribute="leading" secondItem="Mj1-rZ-djc" secondAttribute="leading" type="default" id="DbT-3G-x7t"/>
+                            <constraint firstItem="Mj1-rZ-djc" firstAttribute="top" secondItem="gZB-Od-eef" secondAttribute="top" type="default" id="Dla-eg-e04"/>
+                            <constraint firstItem="Mj1-rZ-djc" firstAttribute="leading" secondItem="gZB-Od-eef" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Dvg-tc-iLa"/>
+                            <constraint firstItem="clw-6h-GTW" firstAttribute="top" secondItem="jZE-6g-ppP" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Sjy-It-lBi"/>
+                            <constraint firstItem="clw-6h-GTW" firstAttribute="trailing" secondItem="koi-Nc-EgI" secondAttribute="trailing" type="default" id="U7Y-Iu-hAY"/>
+                            <constraint firstItem="FQE-Mh-QqG" firstAttribute="baseline" secondItem="jZE-6g-ppP" secondAttribute="baseline" type="default" id="aV5-gQ-EpK"/>
+                            <constraint firstItem="clw-6h-GTW" firstAttribute="bottom" secondItem="koi-Nc-EgI" secondAttribute="bottom" type="default" id="fXu-ye-dc1"/>
+                            <constraint firstAttribute="trailing" secondItem="Mj1-rZ-djc" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="kKc-WO-IFa"/>
+                            <constraint firstItem="clw-6h-GTW" firstAttribute="leading" secondItem="koi-Nc-EgI" secondAttribute="leading" type="default" id="t5T-B4-Doa"/>
+                            <constraint firstAttribute="trailing" secondItem="FQE-Mh-QqG" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="tZT-Fo-MLa"/>
+                            <constraint firstItem="Mj1-rZ-djc" firstAttribute="baseline" secondItem="gZB-Od-eef" secondAttribute="baseline" type="default" id="tw8-wV-ZRE"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" tag="1" title="Details" id="hxe-Z8-9Ck"/>
@@ -300,12 +367,14 @@
                     </navigationItem>
                     <connections>
                         <outlet property="EinsatzDetailsView" destination="koi-Nc-EgI" id="BXB-Od-ajp"/>
-                        <outlet property="lblEinsatzNummer" destination="Bov-fH-AkY" id="RgZ-KX-303"/>
+                        <outlet property="lblEinsatzAdresse" destination="FQE-Mh-QqG" id="78B-E5-YLd"/>
+                        <outlet property="lblEinsatzNummer" destination="Mj1-rZ-djc" id="KXp-eD-SrW"/>
+                        <outlet property="lblEinsatzSubTyp" destination="Bov-fH-AkY" id="Jrz-JN-hPs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jai-aI-htZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3047" y="199"/>
+            <point key="canvasLocation" x="2334" y="-249"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dCk-3I-NXu">
@@ -335,7 +404,9 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EinsatzDetailViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="EinsatzDetailsView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="lblEinsatzAdresse" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lblEinsatzNummer" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblEinsatzSubTyp" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="EinsatzTableCell" superclassName="UITableViewCell">
@@ -351,9 +422,7 @@
         <class className="EinsatzTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EinsatzTableViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="einsatzSubTyp" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lblaktuellerEinsatz" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tableView2" candidateClass="UITableView"/>
             </relationships>
         </class>
         <class className="InfoViewController" superclassName="UIViewController">
