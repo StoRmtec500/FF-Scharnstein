@@ -8,9 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface UebersichtTableViewController : UITableViewController
+{
+    NSString *einsatzurl1;
+}
+
 - (IBAction)InfoView:(id)sender;
 
 @property (nonatomic, copy) NSString *einsatzurl1;
+
 
 @end

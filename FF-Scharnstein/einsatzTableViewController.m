@@ -10,7 +10,6 @@
 #import "XMLStringFile.h"
 #import "EinsatzTableCell.h"
 #import "EinsatzDetailViewController.h"
-#import "UebersichtTableViewController.h"
 
 @interface EinsatzTableViewController ()
 
@@ -18,8 +17,7 @@
 
 @implementation EinsatzTableViewController
 
-@synthesize tableView2;
-@synthesize einsatzSubTyp, lblaktuellerEinsatz, einsatzurl;
+@synthesize lblaktuellerEinsatz, einsatzurl2;
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -34,6 +32,21 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    rssOutputData = [[NSMutableArray alloc]init];
+       
+#pragma mark - Refresh für die Tabelle
+    //****** Refresh eingebaut bei den Einsätzen *****//
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc]init];
+    refreshControl.tintColor = [UIColor redColor];
+    [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+    [self setRefreshControl:refreshControl];
+    
+    [self XMLURL];
 }
 
 
@@ -51,7 +64,6 @@
 	}else if ([elementName isEqualToString:@"einsaetze"])
     {
         lblaktuellerEinsatz.hidden = NO;
-
 	}
 	
 }
@@ -60,7 +72,7 @@
 {
 	//whatever data i am getting from node i am appending it to the nodecontent variable
 	[nodeContent appendString:[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
-    NSLog(@"node content = %@",nodeContent);
+    //NSLog(@"node content = %@",nodeContent);
 }
 
 //bellow delegate method specify when it encounter end tag of specific that tag
@@ -91,36 +103,11 @@
 	if([elementName isEqualToString:@"einsatz"]){
         
 		[rssOutputData addObject:xmlStringFileObject];
-		[xmlStringFileObject release];
+		//[xmlStringFileObject release];
         xmlStringFileObject = nil;
 	}
-	//release the data from mutable string variable
-	[nodeContent release];
-    
 	//reallocate the memory to get new content data from file
 	nodeContent=[[NSMutableString alloc]init];
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    self.isAscending = YES;
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    // self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(print_Message)];
-    
-    
-#pragma mark - Refresh für die Tabelle
-    //****** Refresh eingebaut bei den Einsätzen *****//
-    UIRefreshControl *refreshControl = [[UIRefreshControl alloc]init];
-    refreshControl.tintColor = [UIColor redColor];
-    [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
-    [self setRefreshControl:refreshControl];
-    
-   [self XMLURL];
 }
 
 - (void)didReceiveMemoryWarning
@@ -154,17 +141,11 @@
 	
 	
 	// If no cell is available, create a new one using the given identifier
-	if (cell == nil) {		
+	if (cell == nil) {
 		//add some extra text on table cell .........
-		cell = [[[EinsatzTableCell alloc] initWithStyle: UITableViewCellStyleSubtitle   reuseIdentifier:MyIdentifier] autorelease];
+		cell = [[EinsatzTableCell alloc] initWithStyle: UITableViewCellStyleSubtitle   reuseIdentifier:MyIdentifier];
 	}
-    NSLog(@"EinsatzTableViewgekloclt2");
-	// Set up the cell
-	//[cell.textLabel setFont:[UIFont fontWithName:@"Verdana" size:12]];
-	//[cell.detailTextLabel setFont:[UIFont fontWithName:@"Verdana" size:12]];
-    
-	//cell.textLabel.text=[[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzNummer];
-	//cell.detailTextLabel.text=[[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzTyp];
+
     cell.einsatzSubTyp.text=[[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzTyp];
 	cell.einsatzAlarmstufe.text=[[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzAlarmstufe];
     cell.einsatzAdresse.text=[[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzAdresse];
@@ -173,15 +154,6 @@
 	return cell;
 }
 
-/*-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    NSString *sectionHeader = nil;
-    if(section == 0)
-    {
-        sectionHeader = @"Aktuelle Einsätze";
-    }
-    return sectionHeader;
-}*/
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -197,14 +169,9 @@
 
 -(void)XMLURL
 {
-    rssOutputData = [[NSMutableArray alloc]init];
-    NSString *tempurl = [[NSString alloc] initWithFormat:@"%@",einsatzurl];
-   // NSURL *url = [NSURL URLWithString:tempurl];
+    NSString *tempurl = [[NSString alloc] initWithFormat:@"%@",einsatzurl2];
     NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@", tempurl]];
-        NSLog(@"EinsatzTable: %@", einsatzurl);
-    //declare the object of allocated variable
     NSData *xmlData=[[NSData alloc]initWithContentsOfURL:url];
-    NSLog(@"%@", url);
     //allocate memory for parser as well as
     xmlParserObject =[[NSXMLParser alloc]initWithData:xmlData];
     [xmlParserObject setDelegate:self];
@@ -213,7 +180,7 @@
     [xmlParserObject parse];
     
     //releasing the object of NSData as a part of memory management
-    [xmlData release];
+   // [xmlData release];
 }
 
 -(void)refresh:(UIRefreshControl*)refreshControl

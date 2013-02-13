@@ -20,10 +20,9 @@
 		37719F8216C2464200808674 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37719F8116C2464200808674 /* Default@2x.png */; };
 		37719F8416C2464200808674 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37719F8316C2464200808674 /* Default-568h@2x.png */; };
 		37719F8716C2464200808674 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37719F8516C2464200808674 /* MainStoryboard.storyboard */; };
-		37719F9516C27ABA00808674 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37719F9416C27ABA00808674 /* DetailViewController.m */; };
 		37719FD116C27CA800808674 /* UebersichtTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37719FD016C27CA800808674 /* UebersichtTableViewController.m */; };
 		37719FD516C27FCE00808674 /* EinsatzDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37719FD416C27FCE00808674 /* EinsatzDetailViewController.m */; };
-		B846376516C303C500EBA269 /* EinsatzTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B846376416C303C500EBA269 /* EinsatzTableViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B846376516C303C500EBA269 /* EinsatzTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B846376416C303C500EBA269 /* EinsatzTableViewController.m */; };
 		B8DD955816C437430078A6FC /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = B8DD955716C437430078A6FC /* appicon.png */; };
 		B8DD955B16C4374B0078A6FC /* appicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8DD955A16C4374B0078A6FC /* appicon@2x.png */; };
 /* End PBXBuildFile section */
@@ -49,8 +48,6 @@
 		37719F8116C2464200808674 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		37719F8316C2464200808674 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		37719F8616C2464200808674 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		37719F9316C27ABA00808674 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		37719F9416C27ABA00808674 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		37719FCF16C27CA800808674 /* UebersichtTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UebersichtTableViewController.h; sourceTree = "<group>"; };
 		37719FD016C27CA800808674 /* UebersichtTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UebersichtTableViewController.m; sourceTree = "<group>"; };
 		37719FD316C27FCE00808674 /* EinsatzDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EinsatzDetailViewController.h; sourceTree = "<group>"; };
@@ -110,8 +107,6 @@
 				37719F7C16C2464200808674 /* AppDelegate.h */,
 				37719F7D16C2464200808674 /* AppDelegate.m */,
 				37719F8516C2464200808674 /* MainStoryboard.storyboard */,
-				37719F9316C27ABA00808674 /* DetailViewController.h */,
-				37719F9416C27ABA00808674 /* DetailViewController.m */,
 				37719FCF16C27CA800808674 /* UebersichtTableViewController.h */,
 				37719FD016C27CA800808674 /* UebersichtTableViewController.m */,
 				37719FD316C27FCE00808674 /* EinsatzDetailViewController.h */,
@@ -213,7 +208,6 @@
 			files = (
 				37719F7A16C2464200808674 /* main.m in Sources */,
 				37719F7E16C2464200808674 /* AppDelegate.m in Sources */,
-				37719F9516C27ABA00808674 /* DetailViewController.m in Sources */,
 				37719FD116C27CA800808674 /* UebersichtTableViewController.m in Sources */,
 				37719FD516C27FCE00808674 /* EinsatzDetailViewController.m in Sources */,
 				B846376516C303C500EBA269 /* EinsatzTableViewController.m in Sources */,
@@ -301,6 +295,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FF-Scharnstein/FF-Scharnstein-Prefix.pch";
 				INFOPLIST_FILE = "FF-Scharnstein/FF-Scharnstein-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = FFScharnstein;
 				WRAPPER_EXTENSION = app;
 			};
@@ -312,6 +307,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FF-Scharnstein/FF-Scharnstein-Prefix.pch";
 				INFOPLIST_FILE = "FF-Scharnstein/FF-Scharnstein-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = FFScharnstein;
 				WRAPPER_EXTENSION = app;
 			};

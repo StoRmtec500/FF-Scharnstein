@@ -29,6 +29,7 @@
 
 @synthesize einsatzurl1;
 
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -40,8 +41,7 @@
 
 - (void)viewDidLoad
 {
-
-
+    [super viewDidLoad];
     
     dataArray = [[NSMutableArray alloc]init];
     
@@ -53,10 +53,7 @@
     NSDictionary *secondItemArrayDict = [NSDictionary dictionaryWithObject:secondItem forKey:@"data"];
     [dataArray addObject:secondItemArrayDict];
     
-    EinsatzTableViewController *einsatzTableView = [[EinsatzTableViewController alloc] initWithNibName:@"EinsatzTableViewController" bundle:nil];
-    einsatzTableView.einsatzurl = einsatzurl1;
-    
-        [super viewDidLoad];
+  //  self.einsatzurl1 = [[NSString alloc]init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,21 +62,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.section == 0 &&
-        indexPath.row == 0) {
-        einsatzurl1 = @"http://intranet.ooelfv.at/webext2/rss/webext2_laufend.xml";
-        NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@", einsatzurl1]];
-        NSLog(@"%@", url);
-    }
-    if (indexPath.section == 1 &&
-        indexPath.row == 0) {
-        einsatzurl1 = @"http://intranet.ooelfv.at/webext2/rss/webext2_6stunden.xml";
-        NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@", einsatzurl1]];
-        NSLog(@"%@", url);
-    }
-}
 
 #pragma mark - Table view data source
 
@@ -97,7 +79,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"einsatzCell"];
     
     if (cell == nil)
@@ -132,18 +113,25 @@
     return sectionHeader;
 }
 
-
-#pragma mark - Table view delegate
-
-
-
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if([segue.identifier isEqualToString:@"url"])
     {
-        //UITableViewController *urlEinsatz = [segue destinationViewController];
+        NSIndexPath *indexPath = [[self tableView]indexPathForSelectedRow];
+        if (indexPath.section == 0 &&
+            indexPath.row == 0) {
+            self.einsatzurl1 = @"http://intranet.ooelfv.at/webext2/rss/webext2_laufend.xml";
+           // NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@", einsatzurl1]];
+          //  NSLog(@"%@", url);
+        }
+        if (indexPath.section == 1 &&
+            indexPath.row == 0) {
+            self.einsatzurl1 = @"http://intranet.ooelfv.at/webext2/rss/webext2_6stunden.xml";
+           // NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@", einsatzurl1]];
+            //NSLog(@"%@", url);
+        }
         EinsatzTableViewController *destEinsatz = [segue destinationViewController];
-        destEinsatz.einsatzurl= einsatzurl1;
+        destEinsatz.einsatzurl2 = self.einsatzurl1;
     }
 }
 
