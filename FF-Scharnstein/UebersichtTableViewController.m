@@ -130,6 +130,22 @@
            // NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@", einsatzurl1]];
             //NSLog(@"%@", url);
         }
+        if (indexPath.section == 1 &&
+            indexPath.row == 1) {
+            self.einsatzurl1 = @"http://intranet.ooelfv.at/webext2/rss/webext2_taeglich.xml";
+        }
+        if (indexPath.section == 1 &&
+            indexPath.row == 2) {
+            self.einsatzurl1 = @"http://intranet.ooelfv.at/webext2/rss/webext2_2tage.xml";
+        }
+        if (indexPath.section == 1 &&
+            indexPath.row == 3) {
+            self.einsatzurl1 = @"http://intranet.ooelfv.at/webext2/rss/webext2_woche.xml";
+        }
+        if (indexPath.section == 1 &&
+            indexPath.row == 4) {
+            self.einsatzurl1 = @"http://intranet.ooelfv.at/webext2/rss/webext2_monat.xml";
+        }
         EinsatzTableViewController *destEinsatz = [segue destinationViewController];
         destEinsatz.einsatzurl2 = self.einsatzurl1;
     }

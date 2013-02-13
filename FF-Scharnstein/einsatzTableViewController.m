@@ -186,8 +186,10 @@
 -(void)refresh:(UIRefreshControl*)refreshControl
 {
     NSLog(@"refreshing");
-    [self XMLURL];
+
+    [self.tableView clearsContextBeforeDrawing];
     [self.tableView reloadData];
+        [self XMLURL];
     //[self.activityIndicator setHidden:FALSE];
     //[self.activityIndicator startAnimating];
     [refreshControl endRefreshing];
