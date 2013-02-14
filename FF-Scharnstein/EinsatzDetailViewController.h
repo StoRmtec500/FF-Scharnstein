@@ -18,10 +18,12 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblEinsatzAdresse2;
 @property (strong, nonatomic) IBOutlet UILabel *lblEinsatzStartzeit;
 @property (strong, nonatomic) IBOutlet UILabel *lblEinsatzEnde;
+@property (strong, nonatomic) IBOutlet UILabel *lblEinsatzStatus;
 @property (nonatomic, strong) NSString *strEinsatzNummer;
 @property (nonatomic, strong) NSString *strEinsatzSubTyp;
 @property (nonatomic, strong) NSString *strEinsatzAdresse;
 @property (nonatomic, strong) NSString *strEinsartAdresse2;
 @property (nonatomic, strong) NSString *strEinsatzStartzeit;
 @property (nonatomic, strong) NSString *strEinsartEnde;
+@property (nonatomic, strong) NSString *strEinsatzStatus;
 @end

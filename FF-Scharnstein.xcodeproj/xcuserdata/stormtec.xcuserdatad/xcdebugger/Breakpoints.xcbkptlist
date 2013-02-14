@@ -21,12 +21,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "FF-Scharnstein/EinsatzTableViewController.m"
-         timestampString = "382464020.367173"
+         timestampString = "382517724.919538"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "172"
-         endingLineNumber = "172"
-         landmarkName = "-XMLURL"
+         startingLineNumber = "175"
+         endingLineNumber = "175"
+         landmarkName = "-prepareForSegue:sender:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint

@@ -105,6 +105,9 @@
     if([elementName isEqualToString:@"inzeit"]){
 		xmlStringFileObject.xmlEinsatzEnde=nodeContent;
 	}
+    if([elementName isEqualToString:@"status"]){
+		xmlStringFileObject.xmlEinsatzStatus=nodeContent;
+	}
 	//finally when we reaches the end of tag i am adding data inside the NSMutableArray
 	if([elementName isEqualToString:@"einsatz"]){
         
@@ -175,6 +178,7 @@
         destEinsatz.strEinsartAdresse2 = [[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzAdresse2];
         destEinsatz.strEinsatzStartzeit = [[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzStartzeit];
         destEinsatz.strEinsartEnde = [[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzEnde];
+        destEinsatz.strEinsatzStatus = [[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzStatus];
     }
 }
 

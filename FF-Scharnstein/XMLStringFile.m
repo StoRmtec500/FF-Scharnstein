@@ -9,5 +9,5 @@
 #import "XMLStringFile.h"
 
 @implementation XMLStringFile
-@synthesize xmlEinsatzNummer,xmlEinsatzSubTyp,xmlEinsatzAlarmstufe,xmlEinsatzAdresse, xmlEinsatzAdresse2, xmlEinsatzBezirk, xmlEinsatzEnde, xmlEinsatzStartzeit;
+@synthesize xmlEinsatzNummer,xmlEinsatzSubTyp,xmlEinsatzAlarmstufe,xmlEinsatzAdresse, xmlEinsatzAdresse2, xmlEinsatzBezirk, xmlEinsatzEnde, xmlEinsatzStartzeit, xmlEinsatzStatus;
 @end
