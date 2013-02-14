@@ -93,6 +93,9 @@
     if([elementName isEqualToString:@"default"]){
 		xmlStringFileObject.xmlEinsatzAdresse=nodeContent;
 	}
+    if([elementName isEqualToString:@"earea"]){
+		xmlStringFileObject.xmlEinsatzAdresseEarea=nodeContent;
+	}
     if([elementName isEqualToString:@"emun"]){
 		xmlStringFileObject.xmlEinsatzAdresse2=nodeContent;
 	}
@@ -179,6 +182,7 @@
         destEinsatz.strEinsatzStartzeit = [[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzStartzeit];
         destEinsatz.strEinsartEnde = [[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzEnde];
         destEinsatz.strEinsatzStatus = [[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzStatus];
+        destEinsatz.strEinsatzAdresseEarea = [[rssOutputData objectAtIndex:indexPath.row]xmlEinsatzAdresseEarea];
     }
 }
 
