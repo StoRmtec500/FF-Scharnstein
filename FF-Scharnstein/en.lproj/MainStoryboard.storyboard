@@ -76,6 +76,9 @@
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydL-E0-ZR0">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="118" id="dVR-80-5v3"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="HWS-2J-iJv" id="xtJ-dB-fqK"/>
                                 </connections>
@@ -83,21 +86,49 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="rjZ-gA-31p">
                                 <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FND-69-Go6">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="135" id="Lex-o8-T1x"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="payPay:" destination="HWS-2J-iJv" eventType="touchUpInside" id="6dx-Cm-1Sr"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4i9-zo-5mM">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="Me1-z4-eqc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ydL-E0-ZR0" firstAttribute="centerY" secondItem="rjZ-gA-31p" secondAttribute="centerY" type="default" id="63z-Az-nnv"/>
                             <constraint firstItem="ydL-E0-ZR0" firstAttribute="trailing" secondItem="hge-mF-a1W" secondAttribute="trailing" type="default" id="8Bz-8l-Mbh"/>
-                            <constraint firstItem="ydL-E0-ZR0" firstAttribute="bottom" secondItem="hge-mF-a1W" secondAttribute="bottom" type="default" id="Tbi-Mm-5oT"/>
+                            <constraint firstAttribute="bottom" secondItem="4i9-zo-5mM" secondAttribute="bottom" constant="116" id="FIn-vN-y1m"/>
+                            <constraint firstItem="4i9-zo-5mM" firstAttribute="centerX" secondItem="rjZ-gA-31p" secondAttribute="centerX" type="default" id="SD3-6G-kFb"/>
+                            <constraint firstItem="rjZ-gA-31p" firstAttribute="centerY" secondItem="hge-mF-a1W" secondAttribute="centerY" type="default" id="UcY-Tl-Pzl"/>
                             <constraint firstItem="ydL-E0-ZR0" firstAttribute="top" secondItem="hge-mF-a1W" secondAttribute="top" type="default" id="aZ8-92-Pqq"/>
+                            <constraint firstItem="4i9-zo-5mM" firstAttribute="centerX" secondItem="FND-69-Go6" secondAttribute="centerX" type="default" id="apw-T4-M5p"/>
                             <constraint firstItem="rjZ-gA-31p" firstAttribute="centerX" secondItem="ydL-E0-ZR0" secondAttribute="centerX" type="default" id="ep0-Er-2Ks"/>
                             <constraint firstItem="ydL-E0-ZR0" firstAttribute="leading" secondItem="hge-mF-a1W" secondAttribute="leading" type="default" id="nU5-m7-bRG"/>
+                            <constraint firstAttribute="bottom" secondItem="FND-69-Go6" secondAttribute="bottom" constant="51" id="zkl-ZH-cje"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Infos Über" id="mRT-RT-CXV"/>
                     <connections>
                         <outlet property="_viewWeb" destination="ydL-E0-ZR0" id="fZ1-YV-01w"/>
                         <outlet property="activity" destination="rjZ-gA-31p" id="pZk-2F-c1b"/>
+                        <outlet property="lblPayPalSpenden" destination="4i9-zo-5mM" id="XrF-hC-DCC"/>
+                        <outlet property="payPal" destination="FND-69-Go6" id="GaJ-9L-OYF"/>
                         <outlet property="view" destination="hge-mF-a1W" id="WD4-Ft-3Ry"/>
                     </connections>
                 </viewController>
