@@ -22,6 +22,7 @@
 		37719F8716C2464200808674 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37719F8516C2464200808674 /* MainStoryboard.storyboard */; };
 		37719FD116C27CA800808674 /* UebersichtTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37719FD016C27CA800808674 /* UebersichtTableViewController.m */; };
 		37719FD516C27FCE00808674 /* EinsatzDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37719FD416C27FCE00808674 /* EinsatzDetailViewController.m */; };
+		379EA71B16CE363A00E7A548 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 379EA71A16CE363A00E7A548 /* libxml2.dylib */; };
 		B846376516C303C500EBA269 /* EinsatzTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B846376416C303C500EBA269 /* EinsatzTableViewController.m */; };
 		B8DD955816C437430078A6FC /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = B8DD955716C437430078A6FC /* appicon.png */; };
 		B8DD955B16C4374B0078A6FC /* appicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8DD955A16C4374B0078A6FC /* appicon@2x.png */; };
@@ -52,6 +53,7 @@
 		37719FD016C27CA800808674 /* UebersichtTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UebersichtTableViewController.m; sourceTree = "<group>"; };
 		37719FD316C27FCE00808674 /* EinsatzDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EinsatzDetailViewController.h; sourceTree = "<group>"; };
 		37719FD416C27FCE00808674 /* EinsatzDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EinsatzDetailViewController.m; sourceTree = "<group>"; };
+		379EA71A16CE363A00E7A548 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		B846376316C303C500EBA269 /* EinsatzTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EinsatzTableViewController.h; sourceTree = "<group>"; };
 		B846376416C303C500EBA269 /* EinsatzTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EinsatzTableViewController.m; sourceTree = "<group>"; };
 		B8DD955716C437430078A6FC /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				379EA71B16CE363A00E7A548 /* libxml2.dylib in Frameworks */,
 				37719F6E16C2464200808674 /* UIKit.framework in Frameworks */,
 				37719F7016C2464200808674 /* Foundation.framework in Frameworks */,
 				37719F7216C2464200808674 /* CoreGraphics.framework in Frameworks */,
@@ -75,6 +78,7 @@
 		37719F5E16C2464200808674 = {
 			isa = PBXGroup;
 			children = (
+				379EA71A16CE363A00E7A548 /* libxml2.dylib */,
 				B8DD955A16C4374B0078A6FC /* appicon@2x.png */,
 				B8DD955716C437430078A6FC /* appicon.png */,
 				37719F7316C2464200808674 /* FF-Scharnstein */,
@@ -104,6 +108,7 @@
 		37719F7316C2464200808674 /* FF-Scharnstein */ = {
 			isa = PBXGroup;
 			children = (
+				379EA71C16CE364300E7A548 /* PayPal */,
 				37719F7C16C2464200808674 /* AppDelegate.h */,
 				37719F7D16C2464200808674 /* AppDelegate.m */,
 				37719F8516C2464200808674 /* MainStoryboard.storyboard */,
@@ -136,6 +141,13 @@
 				37719F8316C2464200808674 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		379EA71C16CE364300E7A548 /* PayPal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = PayPal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

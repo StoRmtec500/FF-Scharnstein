@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface InfoViewController : UIViewController
+@interface InfoViewController : UIViewController <UIWebViewDelegate>
 @property (strong, nonatomic) IBOutlet UIWebView *_viewWeb;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activity;
 
 @end

@@ -188,24 +188,20 @@
 
 -(void)XMLURL
 {
+    rssOutputData = [[NSMutableArray alloc]init];
     NSString *tempurl = [[NSString alloc] initWithFormat:@"%@",einsatzurl2];
     NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@", tempurl]];
     NSData *xmlData=[[NSData alloc]initWithContentsOfURL:url];
     //allocate memory for parser as well as
     xmlParserObject =[[NSXMLParser alloc]initWithData:xmlData];
     [xmlParserObject setDelegate:self];
-    
     //asking the xmlparser object to beggin with its parsing
     [xmlParserObject parse];
-    
-    //releasing the object of NSData as a part of memory management
-   // [xmlData release];
 }
 
 -(void)refresh:(UIRefreshControl*)refreshControl
 {
     NSLog(@"refreshing");
-
     [self.tableView clearsContextBeforeDrawing];
     [self.tableView reloadData];
         [self XMLURL];

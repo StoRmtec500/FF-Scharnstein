@@ -76,50 +76,29 @@
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydL-E0-ZR0">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="0gn-gx-B7f"/>
-                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="HWS-2J-iJv" id="xtJ-dB-fqK"/>
+                                </connections>
                             </webView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="© 2013 by Martin Kuenz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFO-JM-TTQ">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Feuerwehr Einsatz App" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="795-ij-itr">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="CQj-za-LqP"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Version 1.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIh-Xx-Ckp">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="94" id="NM6-fy-NRo"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="rjZ-gA-31p">
+                                <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="795-ij-itr" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="18w-Mk-fQ7"/>
-                            <constraint firstAttribute="bottom" secondItem="JIh-Xx-Ckp" secondAttribute="bottom" constant="41" id="4Yj-gl-aHj"/>
+                            <constraint firstItem="ydL-E0-ZR0" firstAttribute="centerY" secondItem="rjZ-gA-31p" secondAttribute="centerY" type="default" id="63z-Az-nnv"/>
                             <constraint firstItem="ydL-E0-ZR0" firstAttribute="trailing" secondItem="hge-mF-a1W" secondAttribute="trailing" type="default" id="8Bz-8l-Mbh"/>
-                            <constraint firstItem="795-ij-itr" firstAttribute="top" secondItem="ydL-E0-ZR0" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="JyP-OJ-4g9"/>
-                            <constraint firstItem="795-ij-itr" firstAttribute="leading" secondItem="hge-mF-a1W" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Mb8-hO-ezk"/>
+                            <constraint firstItem="ydL-E0-ZR0" firstAttribute="bottom" secondItem="hge-mF-a1W" secondAttribute="bottom" type="default" id="Tbi-Mm-5oT"/>
                             <constraint firstItem="ydL-E0-ZR0" firstAttribute="top" secondItem="hge-mF-a1W" secondAttribute="top" type="default" id="aZ8-92-Pqq"/>
+                            <constraint firstItem="rjZ-gA-31p" firstAttribute="centerX" secondItem="ydL-E0-ZR0" secondAttribute="centerX" type="default" id="ep0-Er-2Ks"/>
                             <constraint firstItem="ydL-E0-ZR0" firstAttribute="leading" secondItem="hge-mF-a1W" secondAttribute="leading" type="default" id="nU5-m7-bRG"/>
-                            <constraint firstItem="JIh-Xx-Ckp" firstAttribute="leading" secondItem="hge-mF-a1W" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="qpx-M1-Ehf"/>
-                            <constraint firstAttribute="bottom" secondItem="iFO-JM-TTQ" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="u2b-le-TQD"/>
-                            <constraint firstAttribute="trailing" secondItem="iFO-JM-TTQ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="wl0-V7-3Nd"/>
-                            <constraint firstItem="iFO-JM-TTQ" firstAttribute="leading" secondItem="hge-mF-a1W" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="xhu-OG-Pqc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Infos Über" id="mRT-RT-CXV"/>
                     <connections>
                         <outlet property="_viewWeb" destination="ydL-E0-ZR0" id="fZ1-YV-01w"/>
+                        <outlet property="activity" destination="rjZ-gA-31p" id="pZk-2F-c1b"/>
+                        <outlet property="view" destination="hge-mF-a1W" id="WD4-Ft-3Ry"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nbj-ZQ-kiT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -445,53 +424,6 @@
             <point key="canvasLocation" x="576" y="199"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="EinsatzDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EinsatzDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="EinsatzDetailsView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="lblEinsatzAdresse" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblEinsatzAdresse2" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblEinsatzAdresseEarea" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblEinsatzEnde" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblEinsatzNummer" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblEinsatzStartzeit" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblEinsatzStatus" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="lblEinsatzSubTyp" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="EinsatzTableCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EinsatzTableCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="einsatzAdresse" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="einsatzAdresse2" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="einsatzAlarmstufe" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="einsatzBezirk" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="einsatzSubTyp" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="EinsatzTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EinsatzTableViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="lblaktuellerEinsatz" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="InfoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfoViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="_viewWeb" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="UebersichtTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UebersichtTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="InfoView:"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
