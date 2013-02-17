@@ -23,7 +23,7 @@
 @end
 
 @implementation InfoViewController
-@synthesize _viewWeb, payPal, lblPayPalSpenden;
+@synthesize lblPayPalSpenden, ourStepper, stepperWert;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,35 +41,24 @@
     [PayPal initializeWithAppID:@"APP-80W284485P519543T"
                  forEnvironment:ENV_SANDBOX];
     
-	// Do any additional setup after loading the view.
-    NSString *fullURL = @"http://www.kuenz.co.at/feuerwehrapp/";
-    NSURL *url = [NSURL URLWithString:fullURL];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    [_viewWeb loadRequest:request];
-
-    self.navigationItem.title = @"Infos zur APP";
+    self.stepperWert.text = [NSString stringWithFormat:@"%.f", ourStepper.value];
     
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+	// Do any additional setup after loading the view.
+ //   NSString *fullURL = @"http://www.kuenz.co.at/feuerwehrapp/";
+ //   NSURL *url = [NSURL URLWithString:fullURL];
+ //   NSURLRequest *request = [NSURLRequest requestWithURL:url];
+ //   [_viewWeb loadRequest:request];
+
+    self.navigationItem.title = @"Info";
+
     
     PayPal *p = [PayPal getPayPalInst];
     p.lang = @"de_DE";
     
-    self.payPal = [[PayPal getPayPalInst]getPayButtonWithTarget:self andAction:@selector(payPay:) andButtonType:BUTTON_194x37 andButtonText:BUTTON_TEXT_DONATE];
-    payPal.frame = CGRectMake(63,200, 194, 37);
-    [self.view addSubview:payPal];
+    UIButton *paypal = [[PayPal getPayPalInst]getPayButtonWithTarget:self andAction:@selector(payWithPayPal) andButtonType:BUTTON_194x37 andButtonText:BUTTON_TEXT_DONATE];
+    paypal.frame = CGRectMake(63,200, 194, 37);
+    [self.view addSubview:paypal];
 
-}
-
--(void)webViewDidStartLoad:(UIWebView *)webView
-{
-    [_activity startAnimating];
-}
-
--(void)webViewDidFinishLoad:(UIWebView *)webView
-{
-    [_activity stopAnimating];
-    _activity.hidden = YES;
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -78,52 +67,30 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)payPay:(id)sender {
-    PayPal *ppMEP = [PayPal getPayPalInst];
-    ppMEP.lang = @"de_DE";
 
-    PayPalPayment *payment = [[PayPalPayment alloc]init];
-    payment.paymentCurrency = @"EUR";
-    payment.paymentType = TYPE_PERSONAL;
-    payment.paymentSubType = SUBTYPE_DONATIONS;
-    payment.subTotal = [NSDecimalNumber decimalNumberWithString:@"1.00"];
-    payment.recipient =@"seller_1360925097_biz@kuenz.co.at";
-    payment.merchantName =@"Feuerwehr APP";
-    
-    //  payment.receiverPaymentDetails = [NSMutableArray array];
-    //  NSArray *emails = [NSArray arrayWithObject:@"martin@kuenz.co.at"];
-    //  for (int i = 0; i < emails.count; i++) {
-    //      PayPalReceiverPaymentDetails *details = [[PayPalReceiverPaymentDetails alloc]init];
-    //      details.recipient = [emails objectAtIndex:i];
-    //      [payment.receiverPaymentDetails addObject:details];
-    //  }
-    
-    [ppMEP checkoutWithPayment:payment];
-}
-
-/*-(void)payWithPayPal
+-(void)payWithPayPal
 {
-    PayPal *ppMEP = [PayPal getPayPalInst];
-    
-    PayPalPayment *payment = [[PayPalPayment alloc]init];
-    payment.paymentCurrency = @"EUR";
-    payment.paymentType = TYPE_PERSONAL;
-    payment.paymentSubType = SUBTYPE_DONATIONS;
-    payment.subTotal = [NSDecimalNumber decimalNumberWithString:@"10,00"];
-    payment.recipient =@"seller_1360925097_biz@kuenz.co.at";
-    payment.merchantName =@"Recipient Name";
-    
-  //  payment.receiverPaymentDetails = [NSMutableArray array];
-  //  NSArray *emails = [NSArray arrayWithObject:@"martin@kuenz.co.at"];
-  //  for (int i = 0; i < emails.count; i++) {
-  //      PayPalReceiverPaymentDetails *details = [[PayPalReceiverPaymentDetails alloc]init];
-  //      details.recipient = [emails objectAtIndex:i];
-  //      [payment.receiverPaymentDetails addObject:details];
-  //  }
-    
-
-    [ppMEP checkoutWithPayment:payment];
-}*/
+ PayPal *ppMEP = [PayPal getPayPalInst];
+ ppMEP.lang = @"de_DE";
+ 
+ PayPalPayment *payment = [[PayPalPayment alloc]init];
+ payment.paymentCurrency = @"EUR";
+ payment.paymentType = TYPE_PERSONAL;
+ payment.paymentSubType = SUBTYPE_DONATIONS;
+ payment.subTotal = [NSDecimalNumber decimalNumberWithString:@"1.00"];
+ payment.recipient =@"seller_1360925097_biz@kuenz.co.at";
+ payment.merchantName =@"Feuerwehr APP";
+ 
+ //  payment.receiverPaymentDetails = [NSMutableArray array];
+ //  NSArray *emails = [NSArray arrayWithObject:@"martin@kuenz.co.at"];
+ //  for (int i = 0; i < emails.count; i++) {
+ //      PayPalReceiverPaymentDetails *details = [[PayPalReceiverPaymentDetails alloc]init];
+ //      details.recipient = [emails objectAtIndex:i];
+ //      [payment.receiverPaymentDetails addObject:details];
+ //  }
+ 
+ [ppMEP checkoutWithPayment:payment];
+}
 
 -(void)paymentCanceled
 {
@@ -148,5 +115,9 @@
 - (void)viewDidUnload {
     [self setActivity:nil];
     [super viewDidUnload];
+}
+- (IBAction)stepperValueChanged:(id)sender
+{
+    self.stepperWert.text = [NSString stringWithFormat:@"%ld", (long)ourStepper];
 }
 @end

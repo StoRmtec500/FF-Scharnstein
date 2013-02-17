@@ -338,6 +338,8 @@
 		37719F8E16C2464200808674 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FF-Scharnstein/FF-Scharnstein-Prefix.pch";
 				INFOPLIST_FILE = "FF-Scharnstein/FF-Scharnstein-Info.plist";
@@ -347,6 +349,8 @@
 					"\"$(SRCROOT)/FF-Scharnstein\"",
 				);
 				PRODUCT_NAME = FFScharnstein;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -354,6 +358,8 @@
 		37719F8F16C2464200808674 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FF-Scharnstein/FF-Scharnstein-Prefix.pch";
 				INFOPLIST_FILE = "FF-Scharnstein/FF-Scharnstein-Info.plist";
@@ -363,6 +369,8 @@
 					"\"$(SRCROOT)/FF-Scharnstein\"",
 				);
 				PRODUCT_NAME = FFScharnstein;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

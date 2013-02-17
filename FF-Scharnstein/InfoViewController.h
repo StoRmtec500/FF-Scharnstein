@@ -10,9 +10,11 @@
 #import "PayPal.h"
 
 @interface InfoViewController : UIViewController <UIWebViewDelegate, PayPalPaymentDelegate>
-@property (strong, nonatomic) IBOutlet UIWebView *_viewWeb;
+//@property (strong, nonatomic) IBOutlet UIWebView *_viewWeb;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activity;
-- (IBAction)payPay:(id)sender;
-@property (strong, nonatomic) IBOutlet UIButton *payPal;
+@property (strong, nonatomic) IBOutlet UIStepper *ourStepper;
 @property (strong, nonatomic) IBOutlet UITextField *lblPayPalSpenden;
+@property (strong, nonatomic) IBOutlet UILabel *stepperWert;
+- (IBAction)stepperValueChanged:(UIStepper *)sender;
+
 @end

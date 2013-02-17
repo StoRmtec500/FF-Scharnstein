@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ktr-6D-CBq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C2034" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ktr-6D-CBq">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--Uebersicht Table View Controller - Übersicht-->
@@ -74,61 +74,66 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydL-E0-ZR0">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="118" id="dVR-80-5v3"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="delegate" destination="HWS-2J-iJv" id="xtJ-dB-fqK"/>
-                                </connections>
-                            </webView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="rjZ-gA-31p">
-                                <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FND-69-Go6">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="135" id="Lex-o8-T1x"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="payPay:" destination="HWS-2J-iJv" eventType="touchUpInside" id="6dx-Cm-1Sr"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4i9-zo-5mM">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="Me1-z4-eqc"/>
+                                    <constraint firstAttribute="width" constant="194" id="PeR-RK-uJE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Um unsere Arbeit zu unterstützen, können Sie natürlich auch einen beliebigen Betrag spenden." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="228" translatesAutoresizingMaskIntoConstraints="NO" id="UGg-lq-tnb">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="ZPj-F4-ZtX"/>
+                                    <constraint firstAttribute="width" constant="228" id="d06-kF-5Wa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Betrag:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="52" translatesAutoresizingMaskIntoConstraints="NO" id="Onc-IQ-eEu">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Y6o-va-bzq"/>
+                                    <constraint firstAttribute="width" constant="52" id="mEF-el-WN2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="2fk-am-1y5">
+                                <connections>
+                                    <action selector="stepper:" destination="HWS-2J-iJv" eventType="valueChanged" id="pEq-T8-6ac"/>
+                                    <action selector="stepperValueChanged:" destination="HWS-2J-iJv" eventType="valueChanged" id="F6I-tw-1z0"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="42" translatesAutoresizingMaskIntoConstraints="NO" id="1wt-H9-S2U">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="bEa-Nx-rpY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ydL-E0-ZR0" firstAttribute="trailing" secondItem="hge-mF-a1W" secondAttribute="trailing" type="default" id="8Bz-8l-Mbh"/>
-                            <constraint firstAttribute="bottom" secondItem="4i9-zo-5mM" secondAttribute="bottom" constant="116" id="FIn-vN-y1m"/>
-                            <constraint firstItem="4i9-zo-5mM" firstAttribute="centerX" secondItem="rjZ-gA-31p" secondAttribute="centerX" type="default" id="SD3-6G-kFb"/>
-                            <constraint firstItem="rjZ-gA-31p" firstAttribute="centerY" secondItem="hge-mF-a1W" secondAttribute="centerY" type="default" id="UcY-Tl-Pzl"/>
-                            <constraint firstItem="ydL-E0-ZR0" firstAttribute="top" secondItem="hge-mF-a1W" secondAttribute="top" type="default" id="aZ8-92-Pqq"/>
-                            <constraint firstItem="4i9-zo-5mM" firstAttribute="centerX" secondItem="FND-69-Go6" secondAttribute="centerX" type="default" id="apw-T4-M5p"/>
-                            <constraint firstItem="rjZ-gA-31p" firstAttribute="centerX" secondItem="ydL-E0-ZR0" secondAttribute="centerX" type="default" id="ep0-Er-2Ks"/>
-                            <constraint firstItem="ydL-E0-ZR0" firstAttribute="leading" secondItem="hge-mF-a1W" secondAttribute="leading" type="default" id="nU5-m7-bRG"/>
-                            <constraint firstAttribute="bottom" secondItem="FND-69-Go6" secondAttribute="bottom" constant="51" id="zkl-ZH-cje"/>
+                            <constraint firstItem="4i9-zo-5mM" firstAttribute="top" secondItem="hge-mF-a1W" secondAttribute="top" constant="161" id="0Rd-Ci-1hc"/>
+                            <constraint firstItem="1wt-H9-S2U" firstAttribute="centerX" secondItem="4i9-zo-5mM" secondAttribute="centerX" type="default" id="1jY-Dx-U2G"/>
+                            <constraint firstItem="4i9-zo-5mM" firstAttribute="leading" secondItem="hge-mF-a1W" secondAttribute="leading" constant="13" id="Bwu-Fl-Bsk"/>
+                            <constraint firstItem="2fk-am-1y5" firstAttribute="trailing" secondItem="UGg-lq-tnb" secondAttribute="trailing" type="default" id="H51-B1-8zU"/>
+                            <constraint firstItem="UGg-lq-tnb" firstAttribute="top" secondItem="hge-mF-a1W" secondAttribute="top" constant="20" symbolic="YES" type="default" id="LAe-4q-GvG"/>
+                            <constraint firstItem="1wt-H9-S2U" firstAttribute="bottom" secondItem="Onc-IQ-eEu" secondAttribute="bottom" type="default" id="Qzi-AV-ahw"/>
+                            <constraint firstItem="UGg-lq-tnb" firstAttribute="centerX" secondItem="hge-mF-a1W" secondAttribute="centerX" type="default" id="T8M-uw-yTq"/>
+                            <constraint firstItem="Onc-IQ-eEu" firstAttribute="leading" secondItem="hge-mF-a1W" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="jDm-NL-SGO"/>
+                            <constraint firstItem="Onc-IQ-eEu" firstAttribute="top" secondItem="hge-mF-a1W" secondAttribute="top" constant="86" id="jeL-qQ-K0r"/>
+                            <constraint firstItem="2fk-am-1y5" firstAttribute="top" secondItem="1wt-H9-S2U" secondAttribute="top" type="default" id="pty-Dc-7hw"/>
+                            <constraint firstItem="1wt-H9-S2U" firstAttribute="top" secondItem="Onc-IQ-eEu" secondAttribute="top" type="default" id="wcM-y2-V4k"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Infos Über" id="mRT-RT-CXV"/>
                     <connections>
-                        <outlet property="_viewWeb" destination="ydL-E0-ZR0" id="fZ1-YV-01w"/>
-                        <outlet property="activity" destination="rjZ-gA-31p" id="pZk-2F-c1b"/>
                         <outlet property="lblPayPalSpenden" destination="4i9-zo-5mM" id="XrF-hC-DCC"/>
-                        <outlet property="payPal" destination="FND-69-Go6" id="GaJ-9L-OYF"/>
+                        <outlet property="ourStepper" destination="2fk-am-1y5" id="Ukx-pw-Y8i"/>
+                        <outlet property="stepperWert" destination="1wt-H9-S2U" id="5BD-qe-bHu"/>
                         <outlet property="view" destination="hge-mF-a1W" id="WD4-Ft-3Ry"/>
                     </connections>
                 </viewController>
@@ -455,6 +460,57 @@
             <point key="canvasLocation" x="576" y="199"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="EinsatzDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EinsatzDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="EinsatzDetailsView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="lblEinsatzAdresse" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblEinsatzAdresse2" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblEinsatzAdresseEarea" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblEinsatzEnde" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblEinsatzNummer" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblEinsatzStartzeit" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblEinsatzStatus" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblEinsatzSubTyp" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="EinsatzTableCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EinsatzTableCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="einsatzAdresse" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="einsatzAdresse2" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="einsatzAlarmstufe" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="einsatzBezirk" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="einsatzSubTyp" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="EinsatzTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EinsatzTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="lblaktuellerEinsatz" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="InfoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InfoViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="stepperValueChanged:" candidateClass="UIStepper"/>
+                <relationship kind="outlet" name="activity" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="lblPayPalSpenden" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="ourStepper" candidateClass="UIStepper"/>
+                <relationship kind="outlet" name="stepperWert" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="UebersichtTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UebersichtTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="InfoView:"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
